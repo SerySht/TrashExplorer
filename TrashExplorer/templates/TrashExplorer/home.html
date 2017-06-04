@@ -1,7 +1,11 @@
-<title> TRASHES </title>
+<title> Trashes </title>
 
-{% for trash in name%}
-	<a href= {{trash.trash_name}} > {{trash.trash_name}}</a><br>
-{% endfor %}
-
-
+{% if trashes %}
+	<ul>
+		{% for trash in trashes %}
+			<li><a href= {{ trash.trash_name }} > {{ trash.trash_name }}</a></li>
+		{% endfor %}
+	</ul>
+{% else %}
+	<h3>Youd don't have any trashes</h3>
+{% endif %}
