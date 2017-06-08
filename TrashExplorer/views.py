@@ -3,34 +3,61 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render, get_object_or_404
 from .models import TrashInfo
-from smrm import trash
+from smrm import trash  #kekes
 
 
 def home(request):
     trashes = TrashInfo.objects.all()
-    return render(request, 'TrashExplorer/home.html', {"trashes":trashes})
+    return render(request, 'TrashExplorer/index.html', {"trashes": trashes})
 
 
-def trash_deatils(request, trash_name):
-    trash_object = get_object_or_404(TrashInfo, trash_name = trash_name)
-    trash_path = trash_object.trash_config
-    t = trash.Trash(trash_path)
+def trash_details(request, trash_name):
+    trash_object = get_object_or_404(TrashInfo, trash_name=trash_name)
+    t = trash.Trash(trash_object.trash_path)
     trash_list = t.show_trash(0)
-    print trash_name
-    return render(request, 'TrashExplorer/detail.html', {"trash_name": trash_name,"filelist":trash_list })
+    return render(request, 'TrashExplorer/trash_details.html', {"trash_name": trash_name, "filelist": trash_list})
 
 
 def recover(request, trash_name):
     trash_object = get_object_or_404(TrashInfo, trash_name=trash_name)
-    trash_path = trash_object.trash_config
-    t = trash.Trash(trash_path)
-    tup = request.POST['trash']
-    trash_list = t.show_trash(0)
-    tup2 = ""
-    for i in trash_list:
-        if i[0] == tup:
-            tup2 = i[1]
-    print '------------------', tup, ' ', tup2
-    t.mover_from_trash(tup, tup2)
-    trash_list2 = t.show_trash(0)
-    return render(request, 'TrashExplorer/detail.html', {"trash_name": trash_name,"filelist": trash_list2})
+    t = trash.Trash(trash_object.trash_path)
+    for i in t.show_trash(0):
+        if i[0] == request.POST['file']:
+            old_filepath = i[1]
+
+    t.mover_from_trash(request.POST['file'],  old_filepath)
+    return render(request, 'TrashExplorer/trash_details.html', {"trash_name": trash_name, "filelist": t.show_trash(0)})
+
+
+def delete(request, trash_name):
+    trash_object = get_object_or_404(TrashInfo, trash_name=trash_name)
+    t = trash.Trash(trash_object.trash_path)
+    t.delete_to_trash([request.POST['delete']])
+    return render(request, 'TrashExplorer/trash_details.html', {"trash_name": trash_name, "filelist": t.show_trash(0)})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

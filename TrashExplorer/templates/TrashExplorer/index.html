@@ -1,4 +1,4 @@
-<title> Trashes </title>
+<title> List of trashes </title>
 
 {% if trashes %}
 	<ul>
@@ -6,6 +6,7 @@
 			<li><a href= {{ trash.trash_name }} > {{ trash.trash_name }}</a></li>
 		{% endfor %}
 	</ul>
+
 {% else %}
-	<h3>Youd don't have any trashes</h3>
+	<h3>You don't have any trashes</h3>
 {% endif %}
