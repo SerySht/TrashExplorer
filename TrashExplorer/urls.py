@@ -4,4 +4,5 @@ from . import views
 urlpatterns = [
     url(r'^$', views.home, name='home'),
     url(r'^(?P<trash_name>[a-zA-Z0-9]+)/$', views.trash_deatils, name='detail'),
+    url(r'^(?P<trash_name>[a-zA-Z0-9]+)/recover/$', views.recover, name='recover'),
 ]
