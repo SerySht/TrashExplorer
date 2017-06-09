@@ -1,5 +1,6 @@
-<title> List of trashes </title>
+{% extends 'TrashExplorer/base.html' %}
 
+{% block content %}
 {% if trashes %}
 	<ul>
 		{% for trash in trashes %}
@@ -10,3 +11,6 @@
 {% else %}
 	<h3>You don't have any trashes</h3>
 {% endif %}
+{% endblock %}
+
+

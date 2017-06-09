@@ -1,3 +1,6 @@
+{% extends 'TrashExplorer/base.html' %}
+{% block content %}
+
 <form action="{% url 'recover' trash_name %}" method="post">
     {% csrf_token %}
     {% for trash_path, file_path in filelist %}
@@ -9,9 +12,11 @@
     <input type="submit" value="Recover chosen">
 </form>
 
-
+<br>
 <form action="{% url 'delete' trash_name %}" method="post">
     {% csrf_token %}
     <input type="text"  name="delete" value="/home/sergey/">
     <input type="submit" value="Delete">
 </form>
+
+{% endblock %}
