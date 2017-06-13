@@ -1,8 +1,10 @@
 {% extends 'TrashExplorer/base.html' %}
 {% block content %}
 
+{% if filelist %}
 <form action="{% url 'recover' trash_name %}" method="post">
     {% csrf_token %}
+
     {% for trash_path, file_path in filelist %}
     <input type="radio" name="file" value="{{ trash_path }}">
         {{ file_path }}
@@ -11,12 +13,14 @@
     <br>
     <input type="submit" value="Recover chosen">
 </form>
+{% else %}
+	<h3>You don't have any files in this trash</h3>
+{% endif %}
 
 <br>
 <form action="{% url 'delete' trash_name %}" method="post">
     {% csrf_token %}
     <input type="text"  name="delete" value="/home/sergey/">
-    <input type="submit" value="Delete">
+    <input type="submit" value="Delete to trash">
 </form>
-
 {% endblock %}
