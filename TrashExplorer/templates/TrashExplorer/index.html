@@ -3,8 +3,8 @@
 {% block content %}
 {% if trashes %}
 	<ul>
-		{% for trash in trashes %}
-			<li><a href= {{ trash.trash_name }} > {{ trash.trash_name }}</a></li>
+		{% for trash_name in trashes %}
+			<li><a href= {{ trash_name.id }} > {{ trash_name }}</a></li>
 		{% endfor %}
 	</ul>
 

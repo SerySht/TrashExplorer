@@ -7,6 +7,6 @@ class TrashForm(forms.ModelForm):
     class Meta:
         model = TrashInfo
         fields = [
-            "trash_name",
-            "trash_path"
+            "trash_path",
+            "config_path"
         ]

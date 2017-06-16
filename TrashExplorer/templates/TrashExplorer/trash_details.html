@@ -1,11 +1,16 @@
 {% extends 'TrashExplorer/base.html' %}
+
 {% block content %}
 
-{% if filelist %}
-<form action="{% url 'recover' trash_name %}" method="post">
+ <input type="text"  name="delete"  placeholder="Trash size">
+ <input type="text"  name="delete"  placeholder="Storage time">
+ <input type="text"  name="delete"  placeholder="Recover conflict">
+<br><br>
+{% if trash_list %}
+<form action="{% url 'recover' trash_id %}" method="post">
     {% csrf_token %}
 
-    {% for trash_path, file_path in filelist %}
+    {% for file_path, trash_path in trash_list %}
     <input type="radio" name="file" value="{{ trash_path }}">
         {{ file_path }}
     <br>
@@ -18,9 +23,28 @@
 {% endif %}
 
 <br>
-<form action="{% url 'delete' trash_name %}" method="post">
+<form action="{% url 'delete' trash_id %}" method="post">
     {% csrf_token %}
     <input type="text"  name="delete" value="/home/sergey/">
     <input type="submit" value="Delete to trash">
 </form>
+
+
+<br>
+<form action="{% url 'delete_trash' trash_id %}" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Delete trash">
+</form>
+
+
+<br>
+<form action="{% url 'wipe_trash' trash_id %}" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Wipe trash">
+</form>
+
+
+
+
+
 {% endblock %}

@@ -3,38 +3,73 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render, get_object_or_404
 from .models import TrashInfo
-from smrm import trash  #kekes
+from smrm import trash, trashconfig
 from .forms import TrashForm
+from django.shortcuts import redirect
 
 
 def home(request):
     trashes = TrashInfo.objects.all()
-    return render(request, 'TrashExplorer/index.html', {"trashes": trashes})
+    context = {
+        "trashes": trashes
+    }
+    return render(request, 'TrashExplorer/index.html', context)
 
 
-def trash_details(request, trash_name):
-    trash_object = get_object_or_404(TrashInfo, trash_name=trash_name)
+def trash_details(request, trash_id):
+    trash_object = get_object_or_404(TrashInfo, id=trash_id)
+    config = trashconfig.load(trash_object.config_path)
+    config.pop("silent")
+    config.pop("log_path")
+    config["trash_path"] = trash_object.trash_path
+    t = trash.Trash(**config)
+
+    print t.show_trash()
+    context = {
+        "trash_id": trash_id,
+        "trash_list": t.show_trash()
+    }
+    return render(request, 'TrashExplorer/trash_details.html', context)
+
+
+def recover(request, trash_id):
+    trash_object = get_object_or_404(TrashInfo,  id=trash_id)
     t = trash.Trash(trash_object.trash_path)
-    trash_list = t.get_trash_list()
-    return render(request, 'TrashExplorer/trash_details.html', {"trash_name": trash_name, "filelist": trash_list})
-
-
-def recover(request, trash_name):
-    trash_object = get_object_or_404(TrashInfo, trash_name=trash_name)
-    t = trash.Trash(trash_object.trash_path)
-    for i in t.show_trash(0):
-        if i[0] == request.POST['file']:
-            old_filepath = i[1]
+    old_filepath = ""
+    for tup in t.get_trash_list():
+        if tup[0] == request.POST['file']:
+            old_filepath = tup[1]
 
     t.mover_from_trash(request.POST['file'],  old_filepath)
-    return render(request, 'TrashExplorer/trash_details.html', {"trash_name": trash_name, "filelist": t.show_trash(0)})
+    context = {
+        "trash_id": trash_id,
+        "trash_list": t.show_trash()
+    }
+    return render(request, 'TrashExplorer/trash_details.html', context)
 
 
-def delete(request, trash_name):
-    trash_object = get_object_or_404(TrashInfo, trash_name=trash_name)
+def delete(request, trash_id):
+    trash_object = get_object_or_404(TrashInfo,  id=trash_id)
     t = trash.Trash(trash_object.trash_path)
-    t.delete_to_trash([request.POST['delete']])
-    return render(request, 'TrashExplorer/trash_details.html', {"trash_name": trash_name, "filelist": t.show_trash(0)})
+    t.delete_to_trash(request.POST['delete'])
+    context = {
+        "trash_id": trash_id,
+        "trash_list": t.show_trash()
+    }
+    return render(request, 'TrashExplorer/trash_details.html', context)
+
+
+def delete_by_regex(request, trash_id):
+    trash_object = get_object_or_404(TrashInfo, id=trash_id)
+    t = trash.Trash(trash_object.trash_path)
+    t.delete_to_trash_by_reg(request.POST['delete'])
+    context = {
+        "trash_id": trash_id,
+        "trash_list": t.show_trash()
+    }
+    return render(request, 'TrashExplorer/trash_details.html', context)
+
+
 
 
 def add_trash(request):
@@ -42,15 +77,36 @@ def add_trash(request):
     if form.is_valid():
         instance = form.save(commit=False)
         instance.save()
-
+        return redirect('/')
     context = {
         "form": form,
     }
     return render(request, "TrashExplorer/add_trash.html", context)
 
 
-def remove_trash(request):
-    pass
+def delete_trash(request, trash_id):
+    trash_object = get_object_or_404(TrashInfo, id=trash_id)
+    t = trash.Trash(trash_object.trash_path)
+    trash_object.delete()
+    print t.trash_path
+    t.delete_trash()
+    trashes = TrashInfo.objects.all()
+    context = {
+        "trashes": trashes
+    }
+    return redirect('/')
+    return render(request, 'TrashExplorer/index.html', context)
+
+
+def wipe_trash(request, trash_id):
+    trash_object = get_object_or_404(TrashInfo, id=trash_id)
+    t = trash.Trash(trash_object.trash_path)
+    t.wipe_trash()
+    context = {
+        "trash_id": trash_id,
+        "trash_list": t.show_trash()
+    }
+    return render(request, 'TrashExplorer/trash_details.html', context)
 
 
 
