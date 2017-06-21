@@ -5,8 +5,10 @@
 	<ul>
 		{% for trash_name in trashes %}
 			<li><a href= {{ trash_name.id }} > {{ trash_name }}</a></li>
+
 		{% endfor %}
 	</ul>
+
 
 {% else %}
 	<h3>You don't have any trashes</h3>

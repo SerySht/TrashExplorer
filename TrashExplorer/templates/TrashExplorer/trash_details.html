@@ -1,18 +1,28 @@
 {% extends 'TrashExplorer/base.html' %}
 
 {% block content %}
-
  <input type="text"  name="delete"  placeholder="Trash size">
  <input type="text"  name="delete"  placeholder="Storage time">
  <input type="text"  name="delete"  placeholder="Recover conflict">
+
 <br><br>
+
+
+<form action="{% url 'delete_by_regex' trash_id %}" method="post">
+    {% csrf_token %}
+    <input type="text"  name="regex"  placeholder="Regex">
+     <input type="text"  name="directory"  placeholder="directory">
+    <input type="submit" value="Delete by regex">
+</form>
+
+<br>
 {% if trash_list %}
 <form action="{% url 'recover' trash_id %}" method="post">
     {% csrf_token %}
 
-    {% for file_path, trash_path in trash_list %}
-    <input type="radio" name="file" value="{{ trash_path }}">
-        {{ file_path }}
+    {% for file_info, _, trash_path, old_path in trash_list %}
+    <input type="checkbox" name="file" value="{{ trash_path }}">
+        {{ file_info }}
     <br>
     {% endfor %}
     <br>
@@ -21,6 +31,8 @@
 {% else %}
 	<h3>You don't have any files in this trash</h3>
 {% endif %}
+
+
 
 <br>
 <form action="{% url 'delete' trash_id %}" method="post">

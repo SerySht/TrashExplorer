@@ -1,0 +1,24 @@
+INFO     [2017-06-21 02:06:37,245] Trash path /home/sergey/Trash1
+INFO     [2017-06-21 02:06:37,246] Trash is empty
+INFO     [2017-06-21 02:06:58,077] Trash path /home/sergey/Trash1
+INFO     [2017-06-21 02:06:58,088] /home/sergey/test/83748 moved to trash
+INFO     [2017-06-21 02:06:58,092] /home/sergey/test/137 moved to trash
+INFO     [2017-06-21 02:06:58,100] /home/sergey/test/73847 moved to trash
+INFO     [2017-06-21 02:06:58,101] /home/sergey/test/3 moved to trash
+INFO     [2017-06-21 02:06:58,103] /home/sergey/test/74537 moved to trash
+INFO     [2017-06-21 02:06:58,112] /home/sergey/test/38 moved to trash
+INFO     [2017-06-21 02:06:58,143] Trash path /home/sergey/Trash1
+INFO     [2017-06-21 02:07:29,308] Trash path /home/sergey/Trash1
+INFO     [2017-06-21 02:07:29,309] Recovered 137
+INFO     [2017-06-21 02:07:29,311] Recovered 73847
+INFO     [2017-06-21 02:07:29,312] Recovered 38
+INFO     [2017-06-21 02:07:29,313] Recovered 83748
+INFO     [2017-06-21 02:07:29,314] Recovered 74537
+INFO     [2017-06-21 02:07:29,315] Recovered 3
+INFO     [2017-06-21 02:07:29,354] Trash path /home/sergey/Trash1
+INFO     [2017-06-21 02:07:29,355] Trash is empty
+INFO     [2017-06-21 02:07:32,971] Trash path /home/sergey/Trash1
+ERROR    [2017-06-21 02:07:32,971] Unknown error
+INFO     [2017-06-21 02:07:32,997] Trash path /home/sergey/Trash1
+INFO     [2017-06-21 02:07:32,998] Trash is empty
+INFO     [2017-06-21 02:07:37,834] Trash path /home/sergey/Trash1

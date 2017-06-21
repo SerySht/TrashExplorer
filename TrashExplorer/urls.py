@@ -16,4 +16,6 @@ urlpatterns = [
 
     url(r'^(?P<trash_id>[0-9]+)/delete_trash/$', views.delete_trash, name='delete_trash'),
 
+    url(r'^(?P<trash_id>[0-9]+)/delete_by_regex/$', views.delete_by_regex, name='delete_by_regex'),
+
 ]

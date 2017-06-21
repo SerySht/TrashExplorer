@@ -24,7 +24,6 @@ def trash_details(request, trash_id):
     config["trash_path"] = trash_object.trash_path
     t = trash.Trash(**config)
 
-    print t.show_trash()
     context = {
         "trash_id": trash_id,
         "trash_list": t.show_trash()
@@ -35,39 +34,28 @@ def trash_details(request, trash_id):
 def recover(request, trash_id):
     trash_object = get_object_or_404(TrashInfo,  id=trash_id)
     t = trash.Trash(trash_object.trash_path)
-    old_filepath = ""
-    for tup in t.get_trash_list():
-        if tup[0] == request.POST['file']:
-            old_filepath = tup[1]
+    recover_list = request.POST.getlist('file')
+    for f in recover_list:
+        for a, b, trash_path, old_filepath in t.show_trash():
+            if trash_path == f:
+                t.mover_from_trash(trash_path, old_filepath)
 
-    t.mover_from_trash(request.POST['file'],  old_filepath)
-    context = {
-        "trash_id": trash_id,
-        "trash_list": t.show_trash()
-    }
-    return render(request, 'TrashExplorer/trash_details.html', context)
+    return redirect('/' + trash_id + '/')
 
 
 def delete(request, trash_id):
     trash_object = get_object_or_404(TrashInfo,  id=trash_id)
     t = trash.Trash(trash_object.trash_path)
     t.delete_to_trash(request.POST['delete'])
-    context = {
-        "trash_id": trash_id,
-        "trash_list": t.show_trash()
-    }
-    return render(request, 'TrashExplorer/trash_details.html', context)
+    return redirect('/'+trash_id +'/')
+
 
 
 def delete_by_regex(request, trash_id):
     trash_object = get_object_or_404(TrashInfo, id=trash_id)
     t = trash.Trash(trash_object.trash_path)
-    t.delete_to_trash_by_reg(request.POST['delete'])
-    context = {
-        "trash_id": trash_id,
-        "trash_list": t.show_trash()
-    }
-    return render(request, 'TrashExplorer/trash_details.html', context)
+    t.delete_to_trash_by_reg(request.POST['regex'], request.POST['directory'])
+    return redirect('/' + trash_id + '/')
 
 
 
@@ -78,10 +66,6 @@ def add_trash(request):
         instance = form.save(commit=False)
         instance.save()
         return redirect('/')
-    context = {
-        "form": form,
-    }
-    return render(request, "TrashExplorer/add_trash.html", context)
 
 
 def delete_trash(request, trash_id):
@@ -91,22 +75,14 @@ def delete_trash(request, trash_id):
     print t.trash_path
     t.delete_trash()
     trashes = TrashInfo.objects.all()
-    context = {
-        "trashes": trashes
-    }
     return redirect('/')
-    return render(request, 'TrashExplorer/index.html', context)
 
 
 def wipe_trash(request, trash_id):
     trash_object = get_object_or_404(TrashInfo, id=trash_id)
     t = trash.Trash(trash_object.trash_path)
     t.wipe_trash()
-    context = {
-        "trash_id": trash_id,
-        "trash_list": t.show_trash()
-    }
-    return render(request, 'TrashExplorer/trash_details.html', context)
+    return redirect('/'+trash_id +'/')
 
 
 
