@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import TrashInfo
+from .models import TrashInfo, TaskInfo
 
 
 class TrashForm(forms.ModelForm):
@@ -8,5 +8,19 @@ class TrashForm(forms.ModelForm):
         model = TrashInfo
         fields = [
             "trash_path",
-            "config_path"
+            "config_path",
+            "trash_maximum_size",
+            "file_storage_time",
+            "recover_conflict"
+        ]
+
+
+class TaskForm(forms.ModelForm):
+    class Meta:
+        model = TaskInfo
+        fields = [
+            "target",
+            "silent",
+            "dry",
+            "force"
         ]

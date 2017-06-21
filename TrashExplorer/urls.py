@@ -4,7 +4,13 @@ from . import views
 urlpatterns = [
     url(r'^$', views.home, name='home'),
 
-    url(r'^add_trash/$', views.add_trash, name='add_trash'),
+    url(r'^add_trash/$', views.AddTrash.as_view(), name='add_trash'),
+
+    url(r'^add_task/$', views.add_task, name='add_task'),
+
+    url(r'^task_list/$', views.task_list, name='task_list'),
+
+    url(r'^update_trash/(?P<pk>\d+)/$', views.UpdateTrash.as_view(), name='update_trash'),
 
     url(r'^(?P<trash_id>[0-9]+)/$', views.trash_details, name='trash_details'),
 

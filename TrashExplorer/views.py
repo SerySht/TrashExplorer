@@ -4,8 +4,10 @@ from __future__ import unicode_literals
 from django.shortcuts import render, get_object_or_404
 from .models import TrashInfo
 from smrm import trash, trashconfig
-from .forms import TrashForm
+from .forms import TrashForm, TaskForm
 from django.shortcuts import redirect
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
 
 
 def home(request):
@@ -67,6 +69,11 @@ def add_trash(request):
         instance.save()
         return redirect('/')
 
+    context = {
+         "form": form,
+    }
+    return render(request, "TrashExplorer/add_trash.html", context)
+
 
 def delete_trash(request, trash_id):
     trash_object = get_object_or_404(TrashInfo, id=trash_id)
@@ -85,6 +92,35 @@ def wipe_trash(request, trash_id):
     return redirect('/'+trash_id +'/')
 
 
+def add_task(request):
+    form = TaskForm(request.POST or None)
+    if form.is_valid():
+        instance = form.save(commit=False)
+        instance.save()
+        return redirect('/')
+
+    context = {
+        "form": form,
+    }
+    return render(request, "TrashExplorer/add_task.html", context)
+
+
+def task_list(request):
+    return render(request, "TrashExplorer/task_list.html")
+
+
+class UpdateTrash(UpdateView):
+    success_url = reverse_lazy('home')
+    template_name = "TrashExplorer/update_trash.html"
+    model = TrashInfo
+    fields = ("trash_path", "config_path", "trash_maximum_size", "file_storage_time", "recover_conflict")
+
+
+class AddTrash(CreateView):
+    success_url = reverse_lazy('home')
+    template_name = "TrashExplorer/add_trash.html"
+    model = TrashInfo
+    form_class = TrashForm
 
 
 

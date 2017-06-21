@@ -1,19 +1,30 @@
 {% extends 'TrashExplorer/base.html' %}
 
 {% block content %}
- <input type="text"  name="delete"  placeholder="Trash size">
- <input type="text"  name="delete"  placeholder="Storage time">
- <input type="text"  name="delete"  placeholder="Recover conflict">
 
-<br><br>
+<form action="{% url 'delete_trash' trash_id %}" method="post">{% csrf_token %}
+    <input type="submit" value="Delete trash">
+</form><br>
 
 
-<form action="{% url 'delete_by_regex' trash_id %}" method="post">
-    {% csrf_token %}
-    <input type="text"  name="regex"  placeholder="Regex">
-     <input type="text"  name="directory"  placeholder="directory">
-    <input type="submit" value="Delete by regex">
-</form>
+<form action="{% url 'wipe_trash' trash_id %}" method="post">{% csrf_token %}
+    <input type="submit" value="Wipe trash">
+</form><br>
+
+
+
+<input type="text"  name="delete"  placeholder="Trash size"><br><br>
+<input type="text"  name="delete"  placeholder="Storage time"><br><br>
+<input type="text"  name="delete"  placeholder="Recover conflict"><br><br>
+
+
+
+<!--<form action="{% url 'delete_by_regex' trash_id %}" method="post">-->
+    <!--{% csrf_token %}-->
+    <!--<input type="text"  name="regex"  placeholder="Regex">-->
+     <!--<input type="text"  name="directory"  placeholder="directory">-->
+    <!--<input type="submit" value="Delete by regex">-->
+<!--</form>-->
 
 <br>
 {% if trash_list %}
@@ -34,28 +45,12 @@
 
 
 
-<br>
-<form action="{% url 'delete' trash_id %}" method="post">
-    {% csrf_token %}
-    <input type="text"  name="delete" value="/home/sergey/">
-    <input type="submit" value="Delete to trash">
-</form>
-
-
-<br>
-<form action="{% url 'delete_trash' trash_id %}" method="post">
-    {% csrf_token %}
-    <input type="submit" value="Delete trash">
-</form>
-
-
-<br>
-<form action="{% url 'wipe_trash' trash_id %}" method="post">
-    {% csrf_token %}
-    <input type="submit" value="Wipe trash">
-</form>
-
-
+<!--<br>-->
+<!--<form action="{% url 'delete' trash_id %}" method="post">-->
+    <!--{% csrf_token %}-->
+    <!--<input type="text"  name="delete" value="/home/sergey/">-->
+    <!--<input type="submit" value="Delete to trash">-->
+<!--</form>-->
 
 
 

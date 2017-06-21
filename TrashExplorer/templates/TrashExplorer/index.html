@@ -4,7 +4,9 @@
 {% if trashes %}
 	<ul>
 		{% for trash_name in trashes %}
-			<li><a href= {{ trash_name.id }} > {{ trash_name }}</a></li>
+			<li><a href= {{ trash_name.id }} > {{ trash_name }}</a>
+				<a href=/update_trash/{{ trash_name.id }} > update</a>
+			</li>
 
 		{% endfor %}
 	</ul>
