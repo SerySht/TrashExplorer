@@ -6,8 +6,9 @@
 {% if object_list %}
 	<ul>
 		{% for task in object_list %}
-			<li><a href= {{ task.id }} > {{ task.target }}</a>
-				<a href=/update_trash/{{task.id }} > Edit</a>
+			<li><a href= " {% url 'run' task.id %}" > Do it! </a>
+				 {{ task.target }}
+				<a href=/update_task/{{task.id }} > Edit</a>
 			</li>
 
 		{% endfor %}

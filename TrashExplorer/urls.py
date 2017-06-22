@@ -12,6 +12,8 @@ urlpatterns = [
 
     url(r'^update_trash/(?P<pk>\d+)/$', views.UpdateTrash.as_view(), name='update_trash'),
 
+    url(r'^run/(?P<task_id>[0-9]+)/$', views.run, name='run'),
+
     url(r'^(?P<trash_id>[0-9]+)/$', views.trash_details, name='trash_details'),
 
     url(r'^(?P<trash_id>[0-9]+)/recover/$', views.recover, name='recover'),
