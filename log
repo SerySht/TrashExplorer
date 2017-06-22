@@ -1,23 +1,4 @@
-INFO     [2017-06-21 23:12:01,205] Trash path /home/sergey/Trash1
-WARNING  [2017-06-21 23:12:09,112] Not Found: /update_trash/3
-WARNING  [2017-06-21 23:12:13,330] Not Found: /update_trash/41
-WARNING  [2017-06-21 23:13:02,278] Not Found: /update_trash/41
-WARNING  [2017-06-21 23:13:02,485] Not Found: /favicon.ico
-INFO     [2017-06-21 23:16:20,568] Trash path /home/sergey/Trash1
-ERROR    [2017-06-21 23:18:54,122] Internal Server Error: /update_trash/48
-Traceback (most recent call last):
-  File "/home/sergey/.local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
-    response = get_response(request)
-  File "/home/sergey/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 217, in _get_response
-    response = self.process_exception_by_middleware(e, request)
-  File "/home/sergey/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 215, in _get_response
-    response = response.render()
-  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/response.py", line 107, in render
-    self.content = self.rendered_content
-  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/response.py", line 82, in rendered_content
-    template = self.resolve_template(self.template_name)
-  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/response.py", line 64, in resolve_template
-    return select_template(template, using=self.using)
-  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/loader.py", line 53, in select_template
-    raise TemplateDoesNotExist(', '.join(template_name_list), chain=chain)
-TemplateDoesNotExist: update_trash.html
+INFO     [2017-06-22 09:59:32,778] Trash path /home/sergey/Trash1
+INFO     [2017-06-22 09:59:32,780] Trash is empty
+INFO     [2017-06-22 09:59:38,761] Trash path /home/sergey/Trash1
+INFO     [2017-06-22 09:59:38,762] Trash is empty

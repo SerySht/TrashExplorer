@@ -1,13 +1,12 @@
 {% extends 'TrashExplorer/base.html' %}
-
 {% block content %}
-{% if trashes %}
-	<ul>
-		{% for trash_name in trashes %}
-			<li><a href= {{ trash_name.id }} > {{ trash_name }}</a>
-				<a href=/update_trash/{{ trash_name.id }} > update</a>
-			</li>
 
+{% if object_list %}
+	<ul>
+		{% for trash_name in object_list %}
+			<li><a href= " {% url 'trash_details' trash_name.id %}"> {{ trash_name }}</a> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
+				<a href=" {% url 'update_trash' trash_name.id %}" > Edit</a>
+			</li>
 		{% endfor %}
 	</ul>
 

@@ -2,13 +2,13 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    url(r'^$', views.home, name='home'),
+    url(r'^$', views.TrashList.as_view(), name='index'),
 
     url(r'^add_trash/$', views.AddTrash.as_view(), name='add_trash'),
 
-    url(r'^add_task/$', views.add_task, name='add_task'),
+    url(r'^add_task/$', views.AddTask.as_view(), name='add_task'),
 
-    url(r'^task_list/$', views.task_list, name='task_list'),
+    url(r'^task_list/$', views.TaskList.as_view(), name='task_list'),
 
     url(r'^update_trash/(?P<pk>\d+)/$', views.UpdateTrash.as_view(), name='update_trash'),
 

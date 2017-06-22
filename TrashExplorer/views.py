@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render, get_object_or_404
-from .models import TrashInfo
+from .models import TrashInfo, TaskInfo
 from smrm import trash, trashconfig
 from .forms import TrashForm, TaskForm
 from django.shortcuts import redirect
@@ -10,12 +10,40 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from django.urls import reverse_lazy
 
 
-def home(request):
-    trashes = TrashInfo.objects.all()
-    context = {
-        "trashes": trashes
-    }
-    return render(request, 'TrashExplorer/index.html', context)
+class TrashList(ListView):
+    model = TrashInfo
+    template_name = "TrashExplorer/index.html"
+
+    def get_queryset(self):
+        return TrashInfo.objects.all()
+
+
+class AddTrash(CreateView):
+    success_url = "/"
+    template_name = "TrashExplorer/add_trash.html"
+    model = TrashInfo
+    form_class = TrashForm
+
+
+class TaskList(ListView):
+    model = TaskInfo
+    template_name = "TrashExplorer/task_list.html"
+
+    def get_queryset(self):
+        return TaskInfo.objects.all()
+
+
+class AddTask(CreateView):
+    success_url = "/"
+    template_name = "TrashExplorer/add_task.html"
+    model = TaskInfo
+    form_class = TaskForm
+    print "kekes"
+
+
+class TrashDetails(DeleteView):
+    model = TrashInfo
+    template_name = 'TrashExplorer/trash_details.html'
 
 
 def trash_details(request, trash_id):
@@ -62,26 +90,13 @@ def delete_by_regex(request, trash_id):
 
 
 
-def add_trash(request):
-    form = TrashForm(request.POST or None)
-    if form.is_valid():
-        instance = form.save(commit=False)
-        instance.save()
-        return redirect('/')
-
-    context = {
-         "form": form,
-    }
-    return render(request, "TrashExplorer/add_trash.html", context)
 
 
 def delete_trash(request, trash_id):
     trash_object = get_object_or_404(TrashInfo, id=trash_id)
     t = trash.Trash(trash_object.trash_path)
     trash_object.delete()
-    print t.trash_path
     t.delete_trash()
-    trashes = TrashInfo.objects.all()
     return redirect('/')
 
 
@@ -89,24 +104,13 @@ def wipe_trash(request, trash_id):
     trash_object = get_object_or_404(TrashInfo, id=trash_id)
     t = trash.Trash(trash_object.trash_path)
     t.wipe_trash()
-    return redirect('/'+trash_id +'/')
+    return redirect('/' + trash_id +'/')
 
 
-def add_task(request):
-    form = TaskForm(request.POST or None)
-    if form.is_valid():
-        instance = form.save(commit=False)
-        instance.save()
-        return redirect('/')
-
-    context = {
-        "form": form,
-    }
-    return render(request, "TrashExplorer/add_task.html", context)
 
 
-def task_list(request):
-    return render(request, "TrashExplorer/task_list.html")
+
+
 
 
 class UpdateTrash(UpdateView):
@@ -114,13 +118,10 @@ class UpdateTrash(UpdateView):
     template_name = "TrashExplorer/update_trash.html"
     model = TrashInfo
     fields = ("trash_path", "config_path", "trash_maximum_size", "file_storage_time", "recover_conflict")
+    #add_rename
 
 
-class AddTrash(CreateView):
-    success_url = reverse_lazy('home')
-    template_name = "TrashExplorer/add_trash.html"
-    model = TrashInfo
-    form_class = TrashForm
+
 
 
 
