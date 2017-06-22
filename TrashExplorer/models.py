@@ -21,3 +21,4 @@ class TaskInfo(models.Model):
     silent = models.BooleanField(default=False)
     dry = models.BooleanField(default=False)
     force = models.BooleanField(default=False)
+    trash = models.ForeignKey(TrashInfo, default=None)

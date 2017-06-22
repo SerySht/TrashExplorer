@@ -19,6 +19,7 @@ class TaskForm(forms.ModelForm):
     class Meta:
         model = TaskInfo
         fields = [
+            "trash",
             "target",
             "silent",
             "dry",

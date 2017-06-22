@@ -123,7 +123,8 @@ class UpdateTrash(UpdateView):
 
 def run(request, task_id):
     task = get_object_or_404(TaskInfo, id=task_id)
-    t = trash.Trash("/home/sergey/Trash1")
+
+    t = trash.Trash(task.trash.trash_path)
     print t.delete_to_trash(task.target)
     task.delete()
     return redirect('/task_list')
