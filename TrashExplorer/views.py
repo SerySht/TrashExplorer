@@ -24,70 +24,21 @@ class AddTrash(CreateView):
     form_class = TrashForm
 
 
-class TaskList(ListView):
-    model = TaskInfo
-    template_name = "TrashExplorer/task_list.html"
-
-    def get_queryset(self):
-        return TaskInfo.objects.all()
-
-
-class AddTask(CreateView):
-    success_url = "/task_list"
-    template_name = "TrashExplorer/add_task.html"
-    model = TaskInfo
-    form_class = TaskForm
-
-
-class TrashDetails(DeleteView):
+class UpdateTrash(UpdateView):
+    success_url = "/"
+    template_name = "TrashExplorer/update_trash.html"
     model = TrashInfo
-    template_name = 'TrashExplorer/trash_details.html'
+    fields = ("trash_path",  "trash_maximum_size", "file_storage_time", "rename_when_nameconflict", "log_path",)
 
 
 def trash_details(request, trash_id):
     trash_object = get_object_or_404(TrashInfo, id=trash_id)
-    config = trashconfig.load(trash_object.config_path)
-    config.pop("silent")
-    config.pop("log_path")
-    config["trash_path"] = trash_object.trash_path
-    t = trash.Trash(**config)
-
+    t = trash.Trash(trash_object.trash_path)
     context = {
         "trash_id": trash_id,
         "trash_list": t.show_trash()
     }
     return render(request, 'TrashExplorer/trash_details.html', context)
-
-
-def recover(request, trash_id):
-    trash_object = get_object_or_404(TrashInfo,  id=trash_id)
-    t = trash.Trash(trash_object.trash_path)
-    recover_list = request.POST.getlist('file')
-    for f in recover_list:
-        for a, b, trash_path, old_filepath in t.show_trash():
-            if trash_path == f:
-                t.mover_from_trash(trash_path, old_filepath)
-
-    return redirect('/' + trash_id + '/')
-
-
-def delete(request, trash_id):
-    trash_object = get_object_or_404(TrashInfo,  id=trash_id)
-    t = trash.Trash(trash_object.trash_path)
-    t.delete_to_trash(request.POST['delete'])
-    return redirect('/'+trash_id +'/')
-
-
-
-def delete_by_regex(request, trash_id):
-    trash_object = get_object_or_404(TrashInfo, id=trash_id)
-    t = trash.Trash(trash_object.trash_path)
-    t.delete_to_trash_by_reg(request.POST['regex'], request.POST['directory'])
-    return redirect('/' + trash_id + '/')
-
-
-
-
 
 
 def delete_trash(request, trash_id):
@@ -102,38 +53,61 @@ def wipe_trash(request, trash_id):
     trash_object = get_object_or_404(TrashInfo, id=trash_id)
     t = trash.Trash(trash_object.trash_path)
     t.wipe_trash()
-    return redirect('/' + trash_id +'/')
+    return redirect('/' + trash_id + '/')
+
+
+def recover(request, trash_id):
+    trash_object = get_object_or_404(TrashInfo,  id=trash_id)
+    t = trash.Trash(trash_object.trash_path,
+                    recover_conflict=trash_object.rename_when_nameconflict,
+                    log_path=trash_object.log_path
+                    )
+    recover_list = request.POST.getlist('file')
+    for f in recover_list:
+        for a, b, trash_path, old_filepath in t.show_trash():
+            if trash_path == f:
+                t.mover_from_trash(trash_path, old_filepath)
+
+    return redirect('/' + trash_id + '/')
 
 
 
 
+class AddTask(CreateView):
+    success_url = "/task_list"
+    template_name = "TrashExplorer/add_task.html"
+    model = TaskInfo
+    form_class = TaskForm
 
 
+class TaskList(ListView):
+    model = TaskInfo
+    template_name = "TrashExplorer/task_list.html"
 
-
-class UpdateTrash(UpdateView):
-    success_url = "/"
-    template_name = "TrashExplorer/update_trash.html"
-    model = TrashInfo
-    fields = ("trash_path", "config_path", "trash_maximum_size", "file_storage_time", "recover_conflict")
-    #add_rename
+    def get_queryset(self):
+        return TaskInfo.objects.all()
 
 
 def run(request, task_id):
     task = get_object_or_404(TaskInfo, id=task_id)
 
-    t = trash.Trash(task.trash.trash_path)
-    print task.operation_type
+    t = trash.Trash(task.trash.trash_path,
+                    storage_time=task.file_storage_time,
+                    trash_maximum_size=task.trash_maximum_size,
+                    log_path=task.log_path,
+                    dry_run=task.dry,
+                    force=task.force)
     if task.operation_type == "simple delete":
         info_message = t.delete_to_trash(task.target)
         task.info_message = info_message[0]
     else:
         if task.regex != "":
-            info_message = t. delete_to_trash_by_reg(task.regex, task.target)
+            print task.regex, task.target
+            info_message = t.delete_to_trash_by_reg(task.regex, task.target)
             task.info_message = info_message[0]
         else:
             task.info_message = "You didn't enter regex"
-    task.done = True;
+    task.done = True
     task.save()
     return redirect('/task_list')
 

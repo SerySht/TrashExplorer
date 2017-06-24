@@ -7,21 +7,21 @@ import os
 
 class TrashInfo(models.Model):
     trash_path = models.CharField(max_length=200, unique=True)
-    config_path = models.CharField(max_length=500, default=trashconfig.get_default_path())
-    trash_maximum_size = models.IntegerField(default=200)
+    trash_maximum_size = models.IntegerField(default=20000)
     file_storage_time = models.IntegerField(default=7)
-    recover_conflict = models.BooleanField(default=False)
+    rename_when_nameconflict = models.BooleanField(default=True)
+    log_path = models.CharField(max_length=500, default=os.path.join(os.getenv('HOME'), 'smrm.log'))
 
     def __str__(self):
         return os.path.basename(self.trash_path)
 
 
 class TaskInfo(models.Model):
+    trash = models.ForeignKey(TrashInfo, default=None)
     target = models.CharField(max_length=500, default=" ")
     silent = models.BooleanField(default=False)
     dry = models.BooleanField(default=False)
     force = models.BooleanField(default=False)
-    trash = models.ForeignKey(TrashInfo, default=None)
 
     OPERATION_CHOICES = (
         ("simple delete", "simple delete"),
@@ -31,3 +31,9 @@ class TaskInfo(models.Model):
     done = models.BooleanField(default=False)
     info_message = models.CharField(max_length=300, default=" ")
     regex = models.CharField(max_length=200, default=" ")
+    trash_maximum_size = models.IntegerField(default=2000)
+    file_storage_time = models.IntegerField(default=7)
+    log_path = models.CharField(max_length=500, default=os.path.join(os.getenv('HOME'), 'smrm.log'))
+
+    def __str__(self):
+        return os.path.basename(self.target)

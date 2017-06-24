@@ -8,10 +8,10 @@ class TrashForm(forms.ModelForm):
         model = TrashInfo
         fields = [
             "trash_path",
-            "config_path",
+            "rename_when_nameconflict",
+            "log_path",
             "trash_maximum_size",
             "file_storage_time",
-            "recover_conflict"
         ]
 
 
@@ -27,5 +27,8 @@ class TaskForm(forms.ModelForm):
             "regex",
             "silent",
             "dry",
-            "force"
+            "force",
+            "log_path",
+            "trash_maximum_size",
+            "file_storage_time",
         ]

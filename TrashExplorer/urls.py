@@ -18,12 +18,9 @@ urlpatterns = [
 
     url(r'^(?P<trash_id>[0-9]+)/recover/$', views.recover, name='recover'),
 
-    url(r'^(?P<trash_id>[0-9]+)/delete/$', views.delete, name='delete'),
-
     url(r'^(?P<trash_id>[0-9]+)/wipe_trash/$', views.wipe_trash, name='wipe_trash'),
 
     url(r'^(?P<trash_id>[0-9]+)/delete_trash/$', views.delete_trash, name='delete_trash'),
 
-    url(r'^(?P<trash_id>[0-9]+)/delete_by_regex/$', views.delete_by_regex, name='delete_by_regex'),
 
 ]

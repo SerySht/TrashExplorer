@@ -1,3 +1,13 @@
-INFO     [2017-06-23 23:57:00,162] Trash path /home/sergey/Trash1
-ERROR    [2017-06-23 23:57:00,163] acfasdf not exists
-INFO     [2017-06-23 23:57:14,368] Trash path /home/sergey/Trash1
+INFO     [2017-06-24 01:10:34,274] Trash path /home/sergey/Trash2
+INFO     [2017-06-24 01:10:34,275] Trash is empty
+ERROR    [2017-06-24 01:11:33,648] Internal Server Error: /run/1/
+Traceback (most recent call last):
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sergey/labs/lab3/TrashExplorer/views.py", line 95, in run
+    storage_time=task.storage_time,
+AttributeError: 'TaskInfo' object has no attribute 'storage_time'

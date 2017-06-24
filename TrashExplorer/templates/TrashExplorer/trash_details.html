@@ -2,53 +2,28 @@
 
 {% block content %}
 
-<form action="{% url 'delete_trash' trash_id %}" method="post">{% csrf_token %}
-    <input type="submit" value="Delete trash">
-</form><br>
+    <form action="{% url 'delete_trash' trash_id %}" method="post">{% csrf_token %}
+        <input type="submit" value="Delete trash">
+    </form><br>
 
+    <form action="{% url 'wipe_trash' trash_id %}" method="post">{% csrf_token %}
+        <input type="submit" value="Wipe trash">
+    </form><br>
 
-<form action="{% url 'wipe_trash' trash_id %}" method="post">{% csrf_token %}
-    <input type="submit" value="Wipe trash">
-</form><br>
-
-
-
-
-
-
-<!--<form action="{% url 'delete_by_regex' trash_id %}" method="post">-->
-    <!--{% csrf_token %}-->
-    <!--<input type="text"  name="regex"  placeholder="Regex">-->
-     <!--<input type="text"  name="directory"  placeholder="directory">-->
-    <!--<input type="submit" value="Delete by regex">-->
-<!--</form>-->
-
-<br>
-{% if trash_list %}
-<form action="{% url 'recover' trash_id %}" method="post">
-    {% csrf_token %}
-
-    {% for file_info, _, trash_path, old_path in trash_list %}
-    <input type="checkbox" name="file" value="{{ trash_path }}">
-        {{ file_info }}
     <br>
-    {% endfor %}
-    <br>
-    <input type="submit" value="Recover chosen">
-</form>
-{% else %}
-	<h3>You don't have any files in this trash</h3>
-{% endif %}
+    {% if trash_list %}
+    <form action="{% url 'recover' trash_id %}" method="post">{% csrf_token %}
 
-
-
-<!--<br>-->
-<!--<form action="{% url 'delete' trash_id %}" method="post">-->
-    <!--{% csrf_token %}-->
-    <!--<input type="text"  name="delete" value="/home/sergey/">-->
-    <!--<input type="submit" value="Delete to trash">-->
-<!--</form>-->
-
-
+        {% for file_info, _, trash_path, old_path in trash_list %}
+        <input type="checkbox" name="file" value="{{ trash_path }}">
+            {{ file_info }}
+        <br>
+        {% endfor %}
+        <br>
+        <input type="submit" value="Recover chosen">
+    </form>
+    {% else %}
+        <h3>You don't have any files in this trash</h3>
+    {% endif %}
 
 {% endblock %}
