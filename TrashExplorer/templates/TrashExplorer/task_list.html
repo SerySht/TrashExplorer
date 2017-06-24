@@ -9,11 +9,10 @@
 			{% if not task.done %}
 				<li>
 					 {{ task.target }}&emsp;
-					<a href= " {% url 'run' task.id %}" > Do it! </a>&emsp;
-					<a href=/update_task/{{task.id }} > Edit</a>
+					<a href= " {% url 'run' task.id %}" > Do it! </a>&emsp;					
 				</li>
 			{% else %}
-				<li>{{ task.info_message }}</li>
+				{{ task.info_message }}<br>
 			{% endif %}
 
 		{% endfor %}

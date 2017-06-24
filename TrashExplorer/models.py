@@ -29,7 +29,7 @@ class TaskInfo(models.Model):
     )
     operation_type = models.CharField(max_length=50, choices=OPERATION_CHOICES, default=None)
     done = models.BooleanField(default=False)
-    info_message = models.CharField(max_length=300, default=" ")
+    info_message = models.TextField(max_length=300, default=" ")
     regex = models.CharField(max_length=200, default=" ")
     trash_maximum_size = models.IntegerField(default=2000)
     file_storage_time = models.IntegerField(default=7)

@@ -71,8 +71,6 @@ def recover(request, trash_id):
     return redirect('/' + trash_id + '/')
 
 
-
-
 class AddTask(CreateView):
     success_url = "/task_list"
     template_name = "TrashExplorer/add_task.html"
@@ -89,6 +87,7 @@ class TaskList(ListView):
 
 
 def run(request, task_id):
+    #add more info when delete by regex
     task = get_object_or_404(TaskInfo, id=task_id)
 
     t = trash.Trash(task.trash.trash_path,
