@@ -7,7 +7,6 @@ from smrm import trash, trashconfig
 from .forms import TrashForm, TaskForm
 from django.shortcuts import redirect
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from django.urls import reverse_lazy
 
 
 class TrashList(ListView):
@@ -34,11 +33,10 @@ class TaskList(ListView):
 
 
 class AddTask(CreateView):
-    success_url = "/"
+    success_url = "/task_list"
     template_name = "TrashExplorer/add_task.html"
     model = TaskInfo
     form_class = TaskForm
-    print "kekes"
 
 
 class TrashDetails(DeleteView):
@@ -114,7 +112,7 @@ def wipe_trash(request, trash_id):
 
 
 class UpdateTrash(UpdateView):
-    success_url = reverse_lazy('home')
+    success_url = "/"
     template_name = "TrashExplorer/update_trash.html"
     model = TrashInfo
     fields = ("trash_path", "config_path", "trash_maximum_size", "file_storage_time", "recover_conflict")
@@ -125,8 +123,18 @@ def run(request, task_id):
     task = get_object_or_404(TaskInfo, id=task_id)
 
     t = trash.Trash(task.trash.trash_path)
-    print t.delete_to_trash(task.target)
-    task.delete()
+    print task.operation_type
+    if task.operation_type == "simple delete":
+        info_message = t.delete_to_trash(task.target)
+        task.info_message = info_message[0]
+    else:
+        if task.regex != "":
+            info_message = t. delete_to_trash_by_reg(task.regex, task.target)
+            task.info_message = info_message[0]
+        else:
+            task.info_message = "You didn't enter regex"
+    task.done = True;
+    task.save()
     return redirect('/task_list')
 
 

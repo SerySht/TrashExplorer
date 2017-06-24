@@ -22,3 +22,12 @@ class TaskInfo(models.Model):
     dry = models.BooleanField(default=False)
     force = models.BooleanField(default=False)
     trash = models.ForeignKey(TrashInfo, default=None)
+
+    OPERATION_CHOICES = (
+        ("simple delete", "simple delete"),
+        ("delete by regex", "delete by regex"),
+    )
+    operation_type = models.CharField(max_length=50, choices=OPERATION_CHOICES, default=None)
+    done = models.BooleanField(default=False)
+    info_message = models.CharField(max_length=300, default=" ")
+    regex = models.CharField(max_length=200, default=" ")

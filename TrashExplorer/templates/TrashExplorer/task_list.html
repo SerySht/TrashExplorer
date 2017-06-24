@@ -6,10 +6,15 @@
 {% if object_list %}
 	<ul>
 		{% for task in object_list %}
-			<li><a href= " {% url 'run' task.id %}" > Do it! </a>
-				 {{ task.target }}
-				<a href=/update_task/{{task.id }} > Edit</a>
-			</li>
+			{% if not task.done %}
+				<li>
+					 {{ task.target }}&emsp;
+					<a href= " {% url 'run' task.id %}" > Do it! </a>&emsp;
+					<a href=/update_task/{{task.id }} > Edit</a>
+				</li>
+			{% else %}
+				<li>{{ task.info_message }}</li>
+			{% endif %}
 
 		{% endfor %}
 	</ul>
