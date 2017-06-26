@@ -83,11 +83,10 @@ class TaskList(ListView):
     template_name = "TrashExplorer/task_list.html"
 
     def get_queryset(self):
-        return TaskInfo.objects.all()
+        return reversed(TaskInfo.objects.all())
 
 
 def run(request, task_id):
-    #add more info when delete by regex
     task = get_object_or_404(TaskInfo, id=task_id)
 
     t = trash.Trash(task.trash.trash_path,
@@ -102,8 +101,9 @@ def run(request, task_id):
     else:
         if task.regex != "":
             print task.regex, task.target
-            info_message = t.delete_to_trash_by_reg(task.regex, task.target)
-            task.info_message = info_message[0]
+            return_list = t.delete_to_trash_by_reg(task.regex, task.target)
+            for message in return_list:
+                task.info_message = task.info_message + message +'\n'
         else:
             task.info_message = "You didn't enter regex"
     task.done = True

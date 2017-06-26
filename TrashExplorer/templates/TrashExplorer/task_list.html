@@ -12,7 +12,7 @@
 					<a href= " {% url 'run' task.id %}" > Do it! </a>&emsp;					
 				</li>
 			{% else %}
-				{{ task.info_message }}<br>
+				<li>{{ task.info_message|linebreaks }}</li>
 			{% endif %}
 
 		{% endfor %}
