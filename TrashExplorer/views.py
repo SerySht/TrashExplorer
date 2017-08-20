@@ -7,6 +7,7 @@ from smrm import trash, trashconfig
 from .forms import TrashForm, TaskForm
 from django.shortcuts import redirect
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+import multiprocessing
 
 
 class TrashList(ListView):
@@ -26,7 +27,7 @@ class AddTrash(CreateView):
 
 class UpdateTrash(UpdateView):
     success_url = "/"
-    template_name = "TrashExplorer/update_trash.html"
+    template_name = "TrashExplorer/update_from.html"
     model = TrashInfo
     fields = ("trash_path",  "trash_maximum_size", "file_storage_time", "rename_when_nameconflict", "log_path",)
 
@@ -71,11 +72,7 @@ def recover(request, trash_id):
     return redirect('/' + trash_id + '/')
 
 
-class AddTask(CreateView):
-    success_url = "/task_list"
-    template_name = "TrashExplorer/add_task.html"
-    model = TaskInfo
-    form_class = TaskForm
+###############
 
 
 class TaskList(ListView):
@@ -84,6 +81,38 @@ class TaskList(ListView):
 
     def get_queryset(self):
         return reversed(TaskInfo.objects.all())
+
+
+class AddTask(CreateView):
+    success_url = "/task_list"
+    template_name = "TrashExplorer/add_task.html"
+    model = TaskInfo
+    form_class = TaskForm
+
+
+class UpdateTask(UpdateView):
+    success_url ="/task_list"
+    template_name = "TrashExplorer/update_from.html"
+    model = TaskInfo
+    fields = (
+        "trash",
+        "target",
+        "operation_type",
+        "regex",
+        "silent",
+        "dry",
+        "force",
+        "log_path",
+        "trash_maximum_size",
+        "file_storage_time",
+    )
+
+
+def DeleteTask(request, task_id):
+    task_object = get_object_or_404(TaskInfo, id=task_id)
+    task_object.delete()
+    return redirect('/task_list')
+
 
 
 def run(request, task_id):
@@ -101,8 +130,13 @@ def run(request, task_id):
     else:
         if task.regex != "":
             print task.regex, task.target
-            return_list = t.delete_to_trash_by_reg(task.regex, task.target)
-            for message in return_list:
+
+            #return_list = t.delete_to_trash_by_reg(task.regex, task.target)
+            return_list = []
+            p = multiprocessing.Process(target=t.delete_to_trash_by_reg, args=(task.regex, task.target))
+            p.start()
+
+        for message in return_list:
                 task.info_message = task.info_message + message +'\n'
         else:
             task.info_message = "You didn't enter regex"

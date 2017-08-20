@@ -8,11 +8,15 @@
 		{% for task in object_list %}
 			{% if not task.done %}
 				<li>
-					 {{ task.target }}&emsp;
-					<a href= " {% url 'run' task.id %}" > Do it! </a>&emsp;					
+					<a href= " {% url 'update_task' task.id %}"> {{ task.target }}&emsp;</a>
+					<a href= " {% url 'run' task.id %}" > Run</a>&emsp;
+					<a href= " {% url 'delete_task' task.id %}"> Delete</a>&emsp;
 				</li>
 			{% else %}
-				<li>{{ task.info_message|linebreaks }}</li>
+				<li>{{ task.info_message|linebreaks }}
+					<a href= " {% url 'delete_task' task.id %}"   > Delete</a>&emsp;
+				</li>
+
 			{% endif %}
 
 		{% endfor %}
