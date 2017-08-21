@@ -9,6 +9,10 @@ from django.shortcuts import redirect
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 import multiprocessing
 
+#todolist
+#logging
+#mp join?
+#file open mods
 
 class TrashList(ListView):
     model = TrashInfo
@@ -132,11 +136,14 @@ def run(request, task_id):
             print task.regex, task.target
 
             #return_list = t.delete_to_trash_by_reg(task.regex, task.target)
-            return_list = []
-            p = multiprocessing.Process(target=t.delete_to_trash_by_reg, args=(task.regex, task.target))
+            mgr = multiprocessing.Manager()
+            return_list = mgr.list()
+            p = multiprocessing.Process(target=t.delete_to_trash_by_reg, args=(task.regex, task.target, return_list))
             p.start()
+            p.join()
 
-        for message in return_list:
+            print(return_list)
+            for message in return_list:
                 task.info_message = task.info_message + message +'\n'
         else:
             task.info_message = "You didn't enter regex"
