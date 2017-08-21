@@ -13,6 +13,9 @@ import multiprocessing
 #logging
 #mp join?
 #file open mods
+#test policy
+#reg P
+#perekrivanie
 
 class TrashList(ListView):
     model = TrashInfo
@@ -116,7 +119,6 @@ def DeleteTask(request, task_id):
     task_object = get_object_or_404(TaskInfo, id=task_id)
     task_object.delete()
     return redirect('/task_list')
-
 
 
 def run(request, task_id):
