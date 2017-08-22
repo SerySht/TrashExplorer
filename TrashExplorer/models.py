@@ -17,23 +17,23 @@ class TrashInfo(models.Model):
 
 
 class TaskInfo(models.Model):
-    trash = models.ForeignKey(TrashInfo, default=None)
-    target = models.CharField(max_length=500, default=" ")
-    silent = models.BooleanField(default=False)
-    dry = models.BooleanField(default=False)
-    force = models.BooleanField(default=False)
+    trash = models.ForeignKey(TrashInfo)
+    target = models.CharField(max_length=500)
+    silent = models.BooleanField()
+    dry = models.BooleanField()
+    force = models.BooleanField()
 
     OPERATION_CHOICES = (
         ("simple delete", "simple delete"),
         ("delete by regex", "delete by regex"),
     )
-    operation_type = models.CharField(max_length=50, choices=OPERATION_CHOICES, default=None)
+    operation_type = models.CharField(max_length=50, choices=OPERATION_CHOICES)
     done = models.BooleanField(default=False)
-    info_message = models.TextField(max_length=300, default=" ")
-    regex = models.CharField(max_length=200, default=" ")
-    trash_maximum_size = models.IntegerField(default=2000)
-    file_storage_time = models.IntegerField(default=7)
-    log_path = models.CharField(max_length=500, default=os.path.join(os.getenv('HOME'), 'smrm.log'))
+    info_message = models.TextField(max_length=300)
+    regex = models.CharField(max_length=200,blank=True, null=True)
+    trash_maximum_size = models.IntegerField(blank=True, null=True)
+    file_storage_time = models.IntegerField(blank=True, null=True)
+    log_path = models.CharField(max_length=500, blank=True, null=True)
 
     def __str__(self):
         return os.path.basename(self.target)

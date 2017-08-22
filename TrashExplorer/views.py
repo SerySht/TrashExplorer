@@ -16,6 +16,9 @@ import multiprocessing
 #test policy
 #reg P
 #perekrivanie
+#log wtf
+#exam tasks
+#try file explorer
 
 class TrashList(ListView):
     model = TrashInfo
@@ -124,12 +127,21 @@ def DeleteTask(request, task_id):
 def run(request, task_id):
     task = get_object_or_404(TaskInfo, id=task_id)
 
+    #for new parameters
+    task_dict = task.__dict__
+    trash_dict = task.trash.__dict__
+
+    for key in task_dict.keys():
+        if task_dict[key] is None:
+            task_dict.pop(key)
+    trash_dict.update(task_dict)
     t = trash.Trash(task.trash.trash_path,
-                    storage_time=task.file_storage_time,
-                    trash_maximum_size=task.trash_maximum_size,
-                    log_path=task.log_path,
-                    dry_run=task.dry,
-                    force=task.force)
+                    storage_time=trash_dict["file_storage_time"],
+                    trash_maximum_size=trash_dict["trash_maximum_size"],
+                    log_path=trash_dict["log_path"],
+                    dry_run=trash_dict["dry"],
+                    force=trash_dict["force"])
+    print(trash_dict["log_path"])
     if task.operation_type == "simple delete":
         info_message = t.delete_to_trash(task.target)
         task.info_message = info_message[0]

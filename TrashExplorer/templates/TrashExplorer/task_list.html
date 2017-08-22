@@ -8,13 +8,26 @@
 		{% for task in object_list %}
 			{% if not task.done %}
 				<li>
-					<a href= " {% url 'update_task' task.id %}"> {{ task.target }}&emsp;</a>
-					<a href= " {% url 'run' task.id %}" > Run</a>&emsp;
-					<a href= " {% url 'delete_task' task.id %}"> Delete</a>&emsp;
+					{{task}}
+					<form action="{% url 'delete_task' task.id %}" method="post" style="display: inline;">{% csrf_token %}
+        				<input type="submit" value="Delete">
+					</form>
+
+					<form action="{% url 'update_task' task.id %}" method="post" style="display: inline;">{% csrf_token %}
+        				<input type="submit" value="Update">
+					</form>
+
+					<form action="{% url 'run' task.id %}" method="post" style="display: inline;">{% csrf_token %}
+        				<input type="submit" value="Run">
+					</form><br>
+
 				</li>
+
 			{% else %}
 				<li>{{ task.info_message|linebreaks }}
-					<a href= " {% url 'delete_task' task.id %}"   > Delete</a>&emsp;
+					<form action="{% url 'delete_task' task.id %}" method="post" style="display: inline;">{% csrf_token %}
+        				<input type="submit" value="Delete">
+					</form><br>
 				</li>
 
 			{% endif %}
@@ -26,4 +39,4 @@
 {% else %}
 	<h3>You don't have any tasks</h3>
 {% endif %}
-{% endblock %}
+{% endblock %}/
