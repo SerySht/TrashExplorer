@@ -8,6 +8,7 @@ from .forms import TrashForm, TaskForm
 from django.shortcuts import redirect
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 import multiprocessing
+import os
 
 #todolist
 #logging
@@ -168,6 +169,23 @@ def run(request, task_id):
 
 
 
+
+def file_explorer(request):
+    now_path = "/home/sergey/"
+
+    req = request.POST.get('dir')
+
+    if req is not None:
+        lst = os.listdir(req)
+        now_path = req
+    else:
+        lst = os.listdir(now_path)
+
+    url_dict = {}
+    for l in lst:
+        if not l.startswith("."):
+            url_dict[l] = os.path.join(now_path, l)
+    return render(request, "TrashExplorer/file_explorer.html", {"url_dict": url_dict})
 
 
 

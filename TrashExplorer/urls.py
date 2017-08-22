@@ -8,6 +8,8 @@ urlpatterns = [
 
     url(r'^add_task/$', views.AddTask.as_view(), name='add_task'),
 
+    url(r'^file_explorer/$', views.file_explorer, name='file_explorer'),
+
     url(r'^task_list/$', views.TaskList.as_view(), name='task_list'),
 
     url(r'^update_trash/(?P<pk>\d+)/$', views.UpdateTrash.as_view(), name='update_trash'),
@@ -25,5 +27,7 @@ urlpatterns = [
     url(r'^update_task/(?P<pk>\d+)/$', views.UpdateTask.as_view(), name='update_task'),
 
     url(r'^delete_task/(?P<task_id>[0-9]+)/$', views.DeleteTask, name='delete_task'),
+
+
 
 ]

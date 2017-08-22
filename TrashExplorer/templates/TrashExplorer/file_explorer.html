@@ -1,0 +1,12 @@
+<form action="{% url 'index'  %}" method="post">{% csrf_token %}
+
+        {% for f, w in url_dict.items %}
+            <input type="radio" name="dir" value="{{ w }}">
+                {{ f }}
+            <br>
+        {% endfor %}
+
+        <input type="submit" value="In">
+</form>
+
+
