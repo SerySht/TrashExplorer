@@ -189,8 +189,14 @@ def file_explorer(request):
 
 
 
+def add_task_from_fe(request):
+    form = TaskForm(initial={"target": request.POST.get('dir_b')})
+    if form.is_valid():
+        form.save()
+        print"kek"
+        return redirect('/task_list')
 
-
+    return render(request, "TrashExplorer/add_task.html", {'form': form})
 
 
 

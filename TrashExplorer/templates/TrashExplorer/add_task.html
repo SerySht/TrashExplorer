@@ -2,8 +2,9 @@
 {% block content %}
 
 
-<form method="POST" action="">{% csrf_token %}
+<form method="POST" action="/add_task/">{% csrf_token %}
     {{ form.as_p }}
+
 
 <input type="submit" value="Create Task" >
 

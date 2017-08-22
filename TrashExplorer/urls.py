@@ -28,6 +28,6 @@ urlpatterns = [
 
     url(r'^delete_task/(?P<task_id>[0-9]+)/$', views.DeleteTask, name='delete_task'),
 
-
+    url(r'^add_task_from_fe/$', views.add_task_from_fe, name='add_task_from_fe'),
 
 ]

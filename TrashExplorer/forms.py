@@ -17,7 +17,6 @@ class TrashForm(forms.ModelForm):
 
 class TaskForm(forms.ModelForm):
     regex = forms.CharField(required=False)
-
     class Meta:
         model = TaskInfo
         fields = [

@@ -1,6 +1,283 @@
-INFO     [2017-08-21 23:32:50,688] Trash path /home/sergey/SuperTrash
-INFO     [2017-08-21 23:32:50,688] Trash is empty
-INFO     [2017-08-21 23:32:51,630] Trash path /home/sergey/SuperTrash
-INFO     [2017-08-21 23:32:53,130] Trash path /home/sergey/RaindowTrash
-INFO     [2017-08-21 23:32:53,131] Trash is empty
-INFO     [2017-08-21 23:32:53,835] Trash path /home/sergey/RaindowTrash
+INFO     [2017-08-22 18:49:14,659] Trash path /home/sergey/SuperTrash
+INFO     [2017-08-22 18:49:17,213] Trash path /home/sergey/SuperTrash
+INFO     [2017-08-22 18:49:22,235] Trash path /home/sergey/SuperTrash
+INFO     [2017-08-22 18:49:22,523] Trash path /home/sergey/SuperTrash
+INFO     [2017-08-22 18:49:22,731] Trash path /home/sergey/SuperTrash
+INFO     [2017-08-22 18:49:22,932] Trash path /home/sergey/SuperTrash
+INFO     [2017-08-22 18:49:23,103] Trash path /home/sergey/SuperTrash
+INFO     [2017-08-22 18:49:23,274] Trash path /home/sergey/SuperTrash
+INFO     [2017-08-22 18:49:39,690] Trash path /home/sergey/SuperTrash
+INFO     [2017-08-22 18:49:41,821] Trash path /home/sergey/SuperTrash
+INFO     [2017-08-22 18:49:41,835] Trash path /home/sergey/SuperTrash
+INFO     [2017-08-22 18:49:56,910] Trash path /home/sergey/SuperTrash
+WARNING  [2017-08-22 18:50:28,158] Not Found: /file_explorer/your_url
+WARNING  [2017-08-22 18:50:33,006] Not Found: /file_explorer/your_url
+WARNING  [2017-08-22 18:50:43,873] Not Found: /file_explorer/your_url
+WARNING  [2017-08-22 18:50:46,270] Not Found: /file_explorer/your_url
+WARNING  [2017-08-22 18:51:35,379] Not Found: /file_explorer/your_url
+WARNING  [2017-08-22 18:51:39,709] Forbidden (CSRF token missing or incorrect.): /file_explorer/
+WARNING  [2017-08-22 18:51:50,489] Forbidden (CSRF token missing or incorrect.): /file_explorer/
+WARNING  [2017-08-22 18:52:11,565] Forbidden (CSRF token missing or incorrect.): /file_explorer/
+WARNING  [2017-08-22 18:52:13,982] Forbidden (CSRF token missing or incorrect.): /file_explorer/
+WARNING  [2017-08-22 18:52:37,959] Forbidden (CSRF token missing or incorrect.): /file_explorer/
+ERROR    [2017-08-22 18:53:25,208] Internal Server Error: /file_explorer/
+Traceback (most recent call last):
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sergey/labs/lab3/TrashExplorer/views.py", line 179, in file_explorer
+    lst = os.listdir(req)
+OSError: [Errno 20] Not a directory: "/home/sergey/Python/2016/someone's labs/\xd0\x9b\xd0\xb0\xd0\xb1\xd0\xbe\xd1\x80\xd0\xb0\xd1\x82\xd0\xbe\xd1\x80\xd0\xbd\xd0\xb0\xd1\x8f \xd1\x80\xd0\xb0\xd0\xb1\xd0\xbe\xd1\x82\xd0\xb0 n3/crawled_urls/687474703A2F2F7265646469742E636F6D2F722F6C6561726E70726F6772616D6D696E672F636F6D6D656E74732F346C72676F732F6E6565645F68656C705F776974685F676F6F676C655F627574746F6E2F"
+ERROR    [2017-08-22 19:11:04,553] Internal Server Error: /add_task/
+Traceback (most recent call last):
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/response.py", line 107, in render
+    self.content = self.rendered_content
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/response.py", line 82, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/response.py", line 64, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/loader.py", line 48, in select_template
+    return engine.get_template(template_name)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/backends/django.py", line 39, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/engine.py", line 162, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/engine.py", line 136, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/loaders/base.py", line 44, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/base.py", line 191, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/base.py", line 230, in compile_nodelist
+    return parser.parse()
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/base.py", line 515, in parse
+    raise self.error(token, e)
+TemplateSyntaxError: Could not parse the remainder: ' = 1' from 'form.trash = 1'
+ERROR    [2017-08-22 19:11:12,995] Internal Server Error: /add_task/
+Traceback (most recent call last):
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/response.py", line 107, in render
+    self.content = self.rendered_content
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/response.py", line 82, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/response.py", line 64, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/loader.py", line 48, in select_template
+    return engine.get_template(template_name)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/backends/django.py", line 39, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/engine.py", line 162, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/engine.py", line 136, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/loaders/base.py", line 44, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/base.py", line 191, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/base.py", line 230, in compile_nodelist
+    return parser.parse()
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/base.py", line 515, in parse
+    raise self.error(token, e)
+TemplateSyntaxError: Could not parse the remainder: ' = "kek"' from 'form.trash = "kek"'
+ERROR    [2017-08-22 19:28:33,493] Internal Server Error: /file_explorer/
+Traceback (most recent call last):
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sergey/labs/lab3/TrashExplorer/views.py", line 188, in file_explorer
+    return render(request, "TrashExplorer/file_explorer.html", {"url_dict": url_dict})
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/backends/django.py", line 66, in render
+    return self.template.render(context)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/base.py", line 207, in render
+    return self._render(context)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/defaulttags.py", line 216, in render
+    nodelist.append(node.render_annotated(context))
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/urls/base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+NoReverseMatch: Reverse for 'run' with arguments '('',)' not found. 1 pattern(s) tried: ['run/(?P<task_id>[0-9]+)/$']
+WARNING  [2017-08-22 19:33:37,118] Not Found: /file_explorer/submit1.jpg
+WARNING  [2017-08-22 19:33:37,139] Not Found: /file_explorer/submit1.jpg
+WARNING  [2017-08-22 19:33:37,173] Not Found: /file_explorer/submit1.jpg
+WARNING  [2017-08-22 19:33:37,214] Not Found: /file_explorer/submit1.jpg
+WARNING  [2017-08-22 19:33:37,280] Not Found: /file_explorer/submit1.jpg
+WARNING  [2017-08-22 19:33:37,313] Not Found: /file_explorer/submit1.jpg
+WARNING  [2017-08-22 19:33:38,381] Not Found: /file_explorer/submit1.jpg
+WARNING  [2017-08-22 19:33:38,404] Not Found: /file_explorer/submit1.jpg
+WARNING  [2017-08-22 19:33:38,553] Not Found: /file_explorer/submit1.jpg
+WARNING  [2017-08-22 19:33:38,609] Not Found: /file_explorer/submit1.jpg
+WARNING  [2017-08-22 19:33:38,678] Not Found: /file_explorer/submit1.jpg
+WARNING  [2017-08-22 19:33:38,714] Not Found: /file_explorer/submit1.jpg
+WARNING  [2017-08-22 19:33:38,797] Not Found: /file_explorer/submit1.jpg
+WARNING  [2017-08-22 19:33:38,831] Not Found: /file_explorer/submit1.jpg
+WARNING  [2017-08-22 19:33:38,857] Not Found: /file_explorer/submit1.jpg
+WARNING  [2017-08-22 19:33:38,897] Not Found: /file_explorer/submit1.jpg
+WARNING  [2017-08-22 19:33:40,162] Not Found: /file_explorer/submit1.jpg
+WARNING  [2017-08-22 19:33:40,197] Not Found: /file_explorer/submit1.jpg
+WARNING  [2017-08-22 19:33:40,226] Not Found: /file_explorer/submit1.jpg
+ERROR    [2017-08-22 19:39:33,533] Internal Server Error: /file_explorer/
+Traceback (most recent call last):
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sergey/labs/lab3/TrashExplorer/views.py", line 188, in file_explorer
+    return render(request, "TrashExplorer/file_explorer.html", {"url_dict": url_dict})
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/backends/django.py", line 66, in render
+    return self.template.render(context)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/base.py", line 207, in render
+    return self._render(context)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/defaulttags.py", line 216, in render
+    nodelist.append(node.render_annotated(context))
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/urls/base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+NoReverseMatch: Reverse for 'wipe_trash' with arguments '('',)' not found. 1 pattern(s) tried: ['(?P<trash_id>[0-9]+)/wipe_trash/$']
+ERROR    [2017-08-22 19:39:42,259] Internal Server Error: /file_explorer/
+Traceback (most recent call last):
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sergey/labs/lab3/TrashExplorer/views.py", line 188, in file_explorer
+    return render(request, "TrashExplorer/file_explorer.html", {"url_dict": url_dict})
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/backends/django.py", line 66, in render
+    return self.template.render(context)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/base.py", line 207, in render
+    return self._render(context)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/loader_tags.py", line 72, in render
+    result = block.nodelist.render(context)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/defaulttags.py", line 216, in render
+    nodelist.append(node.render_annotated(context))
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/template/defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/urls/base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/urls/resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+NoReverseMatch: Reverse for 'wipe_trash' with arguments '('',)' not found. 1 pattern(s) tried: ['(?P<trash_id>[0-9]+)/wipe_trash/$']
+ERROR    [2017-08-22 20:09:52,153] Internal Server Error: /file_explorer/
+Traceback (most recent call last):
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sergey/labs/lab3/TrashExplorer/views.py", line 179, in file_explorer
+    lst = os.listdir(req)
+OSError: [Errno 20] Not a directory: '/home/sergey/SuperTrash/filelist'
+ERROR    [2017-08-22 20:10:04,879] Internal Server Error: /file_explorer/
+Traceback (most recent call last):
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sergey/labs/lab3/TrashExplorer/views.py", line 179, in file_explorer
+    lst = os.listdir(req)
+OSError: [Errno 20] Not a directory: "/home/sergey/Python/2016/someone's labs/\xd0\x9b\xd0\xb0\xd0\xb1\xd0\xbe\xd1\x80\xd0\xb0\xd1\x82\xd0\xbe\xd1\x80\xd0\xbd\xd0\xb0\xd1\x8f \xd1\x80\xd0\xb0\xd0\xb1\xd0\xbe\xd1\x82\xd0\xb0 n3/crawled_urls/687474703A2F2F7265646469742E636F6D2F722F6C6561726E70726F6772616D6D696E672F636F6D6D656E74732F346C6C686B792F737472696E675F746F5F657865637574655F636F64652F"
