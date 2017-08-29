@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
 from django.shortcuts import render, get_object_or_404
 from .models import TrashInfo, TaskInfo
 from smrm import trash, trashconfig
@@ -10,16 +8,6 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 import multiprocessing
 import os
 
-#todolist
-#logging
-#mp join?
-#file open mods
-#test policy
-#reg P
-#perekrivanie
-#log wtf
-#exam tasks
-#try file explorer
 
 class TrashList(ListView):
     model = TrashInfo
@@ -125,10 +113,10 @@ def DeleteTask(request, task_id):
     return redirect('/task_list')
 
 
-def run(request, task_id):
+def run_mp(task_id):
     task = get_object_or_404(TaskInfo, id=task_id)
-
     #for new parameters
+    print "------------", task.trash.is_busy
     task_dict = task.__dict__
     trash_dict = task.trash.__dict__
 
@@ -150,12 +138,12 @@ def run(request, task_id):
         if task.regex != "":
             print task.regex, task.target
 
-            #return_list = t.delete_to_trash_by_reg(task.regex, task.target)
-            mgr = multiprocessing.Manager()
-            return_list = mgr.list()
-            p = multiprocessing.Process(target=t.delete_to_trash_by_reg, args=(task.regex, task.target, return_list))
-            p.start()
-            p.join()
+            return_list = t.delete_to_trash_by_reg(task.regex, task.target)
+            # mgr = multiprocessing.Manager()
+            # return_list = mgr.list()
+            # p = multiprocessing.Process(target=t.delete_to_trash_by_reg, args=(task.regex, task.target, return_list))
+            # p.start()
+            # #p.join()
 
             print(return_list)
             for message in return_list:
@@ -163,9 +151,23 @@ def run(request, task_id):
         else:
             task.info_message = "You didn't enter regex"
     task.done = True
+    task.trash.is_busy = False
+    task.is_busy = False
     task.save()
     return redirect('/task_list')
 
+
+def run(request, task_id):
+
+    task = get_object_or_404(TaskInfo, id=task_id)
+    task.is_busy = True
+    task.trash.is_busy = True
+    task.save()
+
+    p = multiprocessing.Process(target=run_mp, args=(task_id,))
+    p.start()
+    #task.trash.save()
+    return redirect('/task_list')
 
 
 
@@ -176,8 +178,12 @@ def file_explorer(request):
     req = request.POST.get('dir')
 
     if req is not None:
-        lst = os.listdir(req)
-        now_path = req
+        if os.path.isdir(req):
+            lst = os.listdir(req)
+            now_path = req
+        else:
+            lst = os.listdir(req[:req.rfind('/')])
+            now_path = req[:req.rfind('/')]
     else:
         lst = os.listdir(now_path)
 

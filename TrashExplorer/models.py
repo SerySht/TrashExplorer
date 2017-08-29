@@ -11,6 +11,7 @@ class TrashInfo(models.Model):
     file_storage_time = models.IntegerField(default=7)
     rename_when_nameconflict = models.BooleanField(default=True)
     log_path = models.CharField(max_length=500, default=os.path.join(os.getenv('HOME'), 'smrm.log'))
+    is_busy = models.BooleanField(default=False)
 
     def __str__(self):
         return os.path.basename(self.trash_path)
@@ -34,6 +35,7 @@ class TaskInfo(models.Model):
     trash_maximum_size = models.IntegerField(blank=True, null=True)
     file_storage_time = models.IntegerField(blank=True, null=True)
     log_path = models.CharField(max_length=500, blank=True, null=True)
+    is_busy = models.BooleanField(default=False)
 
     def __str__(self):
         return os.path.basename(self.target)

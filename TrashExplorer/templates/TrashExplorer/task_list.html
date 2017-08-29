@@ -7,24 +7,44 @@
 	<ul>
 		{% for task in object_list %}
 			{% if not task.done %}
-				<li>
-					{{task}}
+				<li>Trash: {{task.trash}}<br>
+					To delete: {{task}}
+					<br>
+
+
+
+					{% if not task.is_busy %}
+
+						{% if not task.trash.is_busy %}
+							<form action="{% url 'run' task.id %}" method="post" style="display: inline;">{% csrf_token %}
+        						<input type="submit" value="Run task">
+							</form>
+						{% else %}
+						Trash is busy!
+						{% endif %}
+
 					<form action="{% url 'delete_task' task.id %}" method="post" style="display: inline;">{% csrf_token %}
-        				<input type="submit" value="Delete">
+        				<input type="submit" value="Del task">
 					</form>
 
 					<form action="{% url 'update_task' task.id %}" method="post" style="display: inline;">{% csrf_token %}
-        				<input type="submit" value="Update">
+        				<input type="submit" value="Update task">
 					</form>
+					{% else %}
+					In process...
+					{% endif %}
 
-					<form action="{% url 'run' task.id %}" method="post" style="display: inline;">{% csrf_token %}
-        				<input type="submit" value="Run">
-					</form><br>
+
+
+
+
+
 
 				</li>
 
 			{% else %}
-				<li>{{ task.info_message|linebreaks }}
+				<li>  <details >
+					<summary>Done: {{task.target}}</summary>{{ task.info_message|linebreaks }}</details>
 					<form action="{% url 'delete_task' task.id %}" method="post" style="display: inline;">{% csrf_token %}
         				<input type="submit" value="Delete">
 					</form><br>
