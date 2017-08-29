@@ -1,8 +1,6 @@
 {% extends 'TrashExplorer/base.html' %}
 {% block content %}
 
-
-
 {% if object_list %}
 	<ul>
 		{% for task in object_list %}
@@ -10,41 +8,35 @@
 				<li>Trash: {{task.trash}}<br>
 					To delete: {{task}}
 					<br>
+				{% if not task.is_busy %}
 
-
-
-					{% if not task.is_busy %}
-
-						{% if not task.trash.is_busy %}
+					{% if not task.trash.is_busy %}
 							<form action="{% url 'run' task.id %}" method="post" style="display: inline;">{% csrf_token %}
         						<input type="submit" value="Run task">
 							</form>
-						{% else %}
+					{% else %}
 						Trash is busy!
-						{% endif %}
+					{% endif %}
 
 					<form action="{% url 'delete_task' task.id %}" method="post" style="display: inline;">{% csrf_token %}
         				<input type="submit" value="Del task">
 					</form>
 
-					<form action="{% url 'update_task' task.id %}" method="post" style="display: inline;">{% csrf_token %}
+					<form action="{% url 'update_task' task.id %}" method="get" style="display: inline;">{% csrf_token %}
         				<input type="submit" value="Update task">
 					</form>
-					{% else %}
+				{% else %}
 					In process...
-					{% endif %}
-
-
-
-
-
-
-
+				{% endif %}
 				</li>
 
 			{% else %}
-				<li>  <details >
-					<summary>Done: {{task.target}}</summary>{{ task.info_message|linebreaks }}</details>
+				<li>
+					<details >
+						<summary>Done: {{task.target}}</summary>
+						{{ task.info_message|linebreaks }}
+					</details>
+
 					<form action="{% url 'delete_task' task.id %}" method="post" style="display: inline;">{% csrf_token %}
         				<input type="submit" value="Delete">
 					</form><br>
@@ -54,7 +46,6 @@
 
 		{% endfor %}
 	</ul>
-
 
 {% else %}
 	<h3>You don't have any tasks</h3>

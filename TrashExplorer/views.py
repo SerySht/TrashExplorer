@@ -7,7 +7,11 @@ from django.shortcuts import redirect
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 import multiprocessing
 import os
-#not updating from FE
+
+
+# lockov dobavit pri bd
+# proccesov ogr
+
 
 class TrashList(ListView):
     model = TrashInfo
@@ -26,7 +30,7 @@ class AddTrash(CreateView):
 
 class UpdateTrash(UpdateView):
     success_url = "/"
-    template_name = "TrashExplorer/update_from.html"
+    template_name = "TrashExplorer/update_form.html"
     model = TrashInfo
     fields = ("trash_path", "trash_maximum_size", "file_storage_time", "rename_when_nameconflict", "log_path",)
 
@@ -91,23 +95,23 @@ class AddTask(CreateView):
 
 class UpdateTask(UpdateView):
     success_url = "/task_list"
-    template_name = "TrashExplorer/update_from.html"
+    template_name = "TrashExplorer/update_form.html"
     model = TaskInfo
-    fields = (
-        "trash",
-        "target",
-        "operation_type",
-        "regex",
-        "silent",
-        "dry",
-        "force",
-        "log_path",
-        "trash_maximum_size",
-        "file_storage_time",
-    )
+
+    fields = ("trash",
+              "target",
+              "operation_type",
+              "regex",
+              "silent",
+              "dry",
+              "force",
+              "log_path",
+              "trash_maximum_size",
+              "file_storage_time",
+              )
 
 
-def DeleteTask(request, task_id):
+def delete_task(request, task_id):
     task_object = get_object_or_404(TaskInfo, id=task_id)
     task_object.delete()
     return redirect('/task_list')
@@ -116,10 +120,8 @@ def DeleteTask(request, task_id):
 def run_mp(task_id):
     task = get_object_or_404(TaskInfo, id=task_id)
     trash_obj = get_object_or_404(TrashInfo, id=task.trash.id)
-    print trash_obj.is_busy
-    # for new parameters
-    print "------------in mp---", task.trash.is_busy
 
+    # for apply new parameters
     task_dict = task.__dict__
     trash_dict = task.trash.__dict__
 
@@ -127,7 +129,7 @@ def run_mp(task_id):
         if task_dict[key] is None:
             task_dict.pop(key)
     trash_dict.update(task_dict)
-    print "------------in mp 2---", task.trash.is_busy
+
     t = trash.Trash(task.trash.trash_path,
                     storage_time=trash_dict["file_storage_time"],
                     trash_maximum_size=trash_dict["trash_maximum_size"],
@@ -135,29 +137,16 @@ def run_mp(task_id):
                     dry_run=trash_dict["dry"],
                     force=trash_dict["force"])
 
-    print "------------in mp 3---", task.trash.is_busy
     if task.operation_type == "simple delete":
         info_message = t.delete_to_trash(task.target)
         task.info_message = info_message[0]
     else:
         if task.regex != "":
-            print task.regex, task.target
-
             return_list = t.delete_to_trash_by_reg(task.regex, task.target)
-            # mgr = multiprocessing.Manager()
-            # return_list = mgr.list()
-            # p = multiprocessing.Process(target=t.delete_to_trash_by_reg, args=(task.regex, task.target, return_list))
-            # p.start()
-            # #p.join()
-
-            #print(return_list)
             for message in return_list:
                 task.info_message = task.info_message + message + '\n'
         else:
             task.info_message = "You didn't enter regex"
-    print "------------in mp 4---", task.trash.is_busy
-
-
 
     task.done = True
     task.is_busy = False
@@ -165,7 +154,6 @@ def run_mp(task_id):
 
     trash_obj.is_busy = False
     trash_obj.save()
-
 
 
 def run(request, task_id):
@@ -184,7 +172,7 @@ def run(request, task_id):
 
 
 def file_explorer(request):
-    now_path = "/home/sergey/test"  #delete
+    now_path = "/home/sergey/test"  # delete
 
     req = request.POST.get('dir')
 
@@ -209,7 +197,7 @@ def add_task_from_fe(request):
     form = TaskForm(initial={"target": request.POST.get('dir_b')})
     if form.is_valid():
         form.save()
-        print"kek"
+
         return redirect('/task_list')
 
     return render(request, "TrashExplorer/add_task.html", {'form': form})
