@@ -9,10 +9,6 @@ import multiprocessing
 import os
 
 
-# lockov dobavit pri bd
-# proccesov ogr
-
-
 class TrashList(ListView):
     model = TrashInfo
     template_name = "TrashExplorer/index.html"
@@ -116,88 +112,83 @@ def delete_task(request, task_id):
     task_object.delete()
     return redirect('/task_list')
 
+lock = multiprocessing.Lock()
 
-def run_mp(task_id):
-    task = get_object_or_404(TaskInfo, id=task_id)
-    trash_obj = get_object_or_404(TrashInfo, id=task.trash.id)
 
-    # for apply new parameters
-    task_dict = task.__dict__
-    trash_dict = task.trash.__dict__
-
-    for key in task_dict.keys():
-        if task_dict[key] is None:
-            task_dict.pop(key)
+def run_mp(task_obj, trash_obj):
+    task_dict = task_obj.__dict__
+    trash_dict = {}
+    trash_dict.update(trash_obj.__dict__)
     trash_dict.update(task_dict)
 
-    t = trash.Trash(task.trash.trash_path,
+    t = trash.Trash(task_obj.trash.trash_path,
                     storage_time=trash_dict["file_storage_time"],
                     trash_maximum_size=trash_dict["trash_maximum_size"],
                     log_path=trash_dict["log_path"],
                     dry_run=trash_dict["dry"],
                     force=trash_dict["force"])
 
-    if task.operation_type == "simple delete":
-        info_message = t.delete_to_trash(task.target)
-        task.info_message = info_message[0]
+    if task_obj.operation_type == "simple delete":
+        info_message = t.delete_to_trash(task_obj.target)
+        task_obj.info_message = info_message[0]
     else:
-        if task.regex != "":
-            return_list = t.delete_to_trash_by_reg(task.regex, task.target)
+        if task_obj.regex != "":
+            return_list = t.delete_to_trash_by_reg(task_obj.regex, task_obj.target)
             for message in return_list:
-                task.info_message = task.info_message + message + '\n'
+                task_obj.info_message = task_obj.info_message + message + '\n'
         else:
-            task.info_message = "You didn't enter regex"
+            task_obj.info_message = "You didn't enter regex"
 
-    task.done = True
-    task.is_busy = False
-    task.save()
-
+    task_obj.done = True
+    task_obj.is_busy = False
     trash_obj.is_busy = False
+    lock.acquire()
     trash_obj.save()
+    task_obj.save()
+    lock.release()
 
 
 def run(request, task_id):
-    task = get_object_or_404(TaskInfo, id=task_id)
-    task.is_busy = True
-    task.save()
-
-    trash_obj = get_object_or_404(TrashInfo, id=task.trash.id)
+    task_obj = get_object_or_404(TaskInfo, id=task_id)
+    task_obj.is_busy = True
+    trash_obj = get_object_or_404(TrashInfo, id=task_obj.trash.id)
     trash_obj.is_busy = True
-    trash_obj.save()
 
-    p = multiprocessing.Process(target=run_mp, args=(task_id,))
+    lock.acquire()
+    trash_obj.save()
+    task_obj.save()
+    lock.release()
+
+    p = multiprocessing.Process(target=run_mp, args=(task_obj, trash_obj))
     p.start()
 
     return redirect('/task_list')
 
 
 def file_explorer(request):
-    now_path = "/home/sergey/test"  # delete
-
+    current_path = os.getenv('HOME')
     req = request.POST.get('dir')
 
     if req is not None:
         if os.path.isdir(req):
             lst = os.listdir(req)
-            now_path = req
+            current_path = req
         else:
             lst = os.listdir(req[:req.rfind('/')])
-            now_path = req[:req.rfind('/')]
+            current_path = req[:req.rfind('/')]
     else:
-        lst = os.listdir(now_path)
+        lst = os.listdir(current_path)
 
     url_dict = {}
     for l in lst:
         if not l.startswith("."):
-            url_dict[l] = os.path.join(now_path, l)
+            url_dict[l] = os.path.join(current_path, l)
     return render(request, "TrashExplorer/file_explorer.html", {"url_dict": url_dict})
 
 
 def add_task_from_fe(request):
-    form = TaskForm(initial={"target": request.POST.get('dir_b')})
+    form = TaskForm(initial={"target": request.POST.get('del_dir')})
     if form.is_valid():
         form.save()
-
         return redirect('/task_list')
-
     return render(request, "TrashExplorer/add_task.html", {'form': form})
