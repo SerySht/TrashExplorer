@@ -28,7 +28,7 @@ class UpdateTrash(UpdateView):
     success_url = "/"
     template_name = "TrashExplorer/update_form.html"
     model = TrashInfo
-    fields = ("trash_path", "trash_maximum_size", "file_storage_time", "rename_when_nameconflict", "log_path",)
+    fields = ("trash_path", "trash_maximum_size", "file_storage_time", "rename_when_nameconflict", "log_path", "dry_run", "verbose")
 
 
 def trash_details(request, trash_id):
@@ -79,7 +79,10 @@ class TaskList(ListView):
     template_name = "TrashExplorer/task_list.html"
 
     def get_queryset(self):
-        return reversed(TaskInfo.objects.all())
+        if TaskInfo.objects.all():
+            return reversed(TaskInfo.objects.all())
+        else:
+            return None
 
 
 class AddTask(CreateView):
@@ -99,11 +102,12 @@ class UpdateTask(UpdateView):
               "operation_type",
               "regex",
               "silent",
-              "dry",
+              "dry_run",
               "force",
               "log_path",
               "trash_maximum_size",
               "file_storage_time",
+              "verbose",
               )
 
 
@@ -125,12 +129,16 @@ def run_mp(task_obj, trash_obj):
                     storage_time=trash_dict["file_storage_time"],
                     trash_maximum_size=trash_dict["trash_maximum_size"],
                     log_path=trash_dict["log_path"],
-                    dry_run=trash_dict["dry"],
-                    force=trash_dict["force"])
+                    dry_run=trash_dict["dry_run"],
+                    force=trash_dict["force"],
+                    verbose=task_dict["verbose"]
+                    )
 
     if task_obj.operation_type == "simple delete":
-        info_message = t.delete_to_trash(task_obj.target)
-        task_obj.info_message = info_message[0]
+        targets = task_obj.target.split()
+        for target in targets:
+            info_message = t.delete_to_trash(target)
+            task_obj.info_message += "\n" + info_message[0]
     else:
         if task_obj.regex != "":
             return_list = t.delete_to_trash_by_reg(task_obj.regex, task_obj.target)
@@ -138,14 +146,12 @@ def run_mp(task_obj, trash_obj):
                 task_obj.info_message = task_obj.info_message + message + '\n'
         else:
             task_obj.info_message = "You didn't enter regex"
-
     task_obj.done = True
     task_obj.is_busy = False
     trash_obj.is_busy = False
-    lock.acquire()
-    trash_obj.save()
-    task_obj.save()
-    lock.release()
+    with lock:
+        trash_obj.save()
+        task_obj.save()
 
 
 def run(request, task_id):
@@ -154,10 +160,9 @@ def run(request, task_id):
     trash_obj = get_object_or_404(TrashInfo, id=task_obj.trash.id)
     trash_obj.is_busy = True
 
-    lock.acquire()
-    trash_obj.save()
-    task_obj.save()
-    lock.release()
+    with lock:
+        trash_obj.save()
+        task_obj.save()
 
     p = multiprocessing.Process(target=run_mp, args=(task_obj, trash_obj))
     p.start()
@@ -171,19 +176,20 @@ def file_explorer(request):
 
     if req is not None:
         if os.path.isdir(req):
-            lst = os.listdir(req)
+            files = os.listdir(req)
             current_path = req
         else:
-            lst = os.listdir(req[:req.rfind('/')])
+            files = os.listdir(req[:req.rfind('/')])
             current_path = req[:req.rfind('/')]
     else:
-        lst = os.listdir(current_path)
+        files = os.listdir(current_path)
 
-    url_dict = {}
-    for l in lst:
-        if not l.startswith("."):
-            url_dict[l] = os.path.join(current_path, l)
-    return render(request, "TrashExplorer/file_explorer.html", {"url_dict": url_dict})
+    url_list = []
+    for f in files:
+        if not f.startswith("."):
+            filepath = os.path.join(current_path, f)
+            url_list.append((f, filepath, os.path.isdir(filepath)))
+    return render(request, "TrashExplorer/file_explorer.html", {"url_list": url_list})
 
 
 def add_task_from_fe(request):

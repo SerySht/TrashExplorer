@@ -1,13 +1,22 @@
 {% extends 'TrashExplorer/base.html' %}
 {% block content %}
 
-{% for f, w in url_dict.items %}
-        <form action="{% url 'file_explorer'  %}"  method="post" style='float:left;'>{% csrf_token %}
-          <button type="submit" name="dir" value="{{w}}" class="btn btn-default">{{f}}</button>
-        </form>
+{% for file, path, is_dir in url_list %}
+        {% if is_dir %}
+            <form action="{% url 'file_explorer'  %}"  method="post" style='float:left;'>{% csrf_token %}
+              <button type="submit" name="dir" value="{{path}}" class="btn btn-default">{{file}}</button>
+            </form>
+        {% else %}
+
+            <form action="{% url 'file_explorer'  %}"  method="post" style='float:left;'>{% csrf_token %}
+              <button type="submit" name="dir" value="{{path}}" class="btn btn-success">{{file}}</button>
+            </form>
+        {% endif %}
+
         <form action="{% url 'add_task_from_fe'  %}"  method="post">{% csrf_token %}
-          <button type="submit" name="del_dir" value="{{w}}" class="btn btn-danger""> Delete</button>
+          <button type="submit" name="del_dir" value="{{path}}" class="btn btn-danger"> Delete</button>
         </form><br>
+
 {% endfor %}
 {% endblock %}/
 

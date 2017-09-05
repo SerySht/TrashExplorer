@@ -12,16 +12,19 @@ class TrashInfo(models.Model):
     rename_when_nameconflict = models.BooleanField(default=True)
     log_path = models.CharField(max_length=500, default=os.path.join(os.getenv('HOME'), 'smrm.log'))
     is_busy = models.BooleanField(default=False)
+    verbose = models.BooleanField(default=True)
+    silent = models.BooleanField(default=False)
+    dry_run = models.BooleanField(default=False)
 
-    def __str__(self):
+    def __unicode__(self):
         return os.path.basename(self.trash_path)
 
 
 class TaskInfo(models.Model):
     trash = models.ForeignKey(TrashInfo)
-    target = models.CharField(max_length=500)
+    target = models.TextField()
     silent = models.BooleanField()
-    dry = models.BooleanField()
+    dry_run = models.BooleanField()
     force = models.BooleanField()
 
     OPERATION_CHOICES = (
@@ -36,6 +39,7 @@ class TaskInfo(models.Model):
     file_storage_time = models.IntegerField(blank=True, null=True)
     log_path = models.CharField(max_length=500, blank=True, null=True)
     is_busy = models.BooleanField(default=False)
+    verbose = models.BooleanField(default=True)
 
-    def __str__(self):
+    def __unicode__(self):
         return os.path.basename(self.target)
