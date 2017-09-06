@@ -1,16 +1,256 @@
-INFO     [2017-09-05 00:19:33,634] Trash path /home/sergey/RainbowTrash
-INFO     [2017-09-05 00:19:33,634] Trash is empty
-INFO     [2017-09-05 00:19:34,456] Trash path /home/sergey/RainbowTrash
-INFO     [2017-09-05 00:19:49,113] Trash path /home/sergey/RainbowTrash
-ERROR    [2017-09-05 00:19:49,114] /home/sergey/Безымянный not exists
-ERROR    [2017-09-05 00:19:49,115] документ not exists
-INFO     [2017-09-05 00:19:53,381] Trash path /home/sergey/RainbowTrash
-INFO     [2017-09-05 00:19:53,381] Trash is empty
-INFO     [2017-09-05 00:20:37,946] Trash path /home/sergey/RainbowTrash
-INFO     [2017-09-05 00:20:37,947] /home/sergey/лул moved to trash
-INFO     [2017-09-05 00:20:40,820] Trash path /home/sergey/RainbowTrash
-INFO     [2017-09-05 00:20:52,243] Trash path /home/sergey/RainbowTrash
-INFO     [2017-09-05 00:20:52,244] Recovered лул
-INFO     [2017-09-05 00:20:52,259] Trash path /home/sergey/RainbowTrash
-INFO     [2017-09-05 00:20:52,259] Trash is empty
-INFO     [2017-09-05 00:20:54,973] Trash path /home/sergey/RainbowTrash
+INFO     [2017-09-06 01:23:57,443] Trash path /home/sergey/SuperTrash
+INFO     [2017-09-06 01:23:57,444] Trash is empty
+INFO     [2017-09-06 01:23:59,387] Trash path /home/sergey/RainbowTrash
+INFO     [2017-09-06 01:23:59,388] Trash is empty
+INFO     [2017-09-06 01:24:14,542] Trash path /home/sergey/RainbowTrash
+INFO     [2017-09-06 01:24:14,542] Trash is empty
+INFO     [2017-09-06 01:24:34,626] Trash path /home/sergey/RainbowTrash
+ERROR    [2017-09-06 01:24:34,763] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/05/cc4a5c3d30ce7e7c7c749c8d3871785577b7cd
+ERROR    [2017-09-06 01:24:34,764] /home/sergey/test/Python/labs/lab3/.git/objects/da/86d916bec95d5de171fd6af44c25b758325fec not exists or no access to it
+ERROR    [2017-09-06 01:24:34,783] /home/sergey/test/Python/labs/lab3/.git/objects/aa/40636d757b72b1844327f3b0a8b894c7842c41 not exists or no access to it
+INFO     [2017-09-06 01:24:34,806] /home/sergey/test/Python/2016 moved to trash
+ERROR    [2017-09-06 01:24:34,809] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/44/d3154d194ab9f23c6611b513c9e2c5c3b46cb6
+ERROR    [2017-09-06 01:24:34,821] /home/sergey/test/Python/labs/lab3/.git/objects/cf/872efaab50eeb84d55c1e29ed7ab32468372f7 not exists or no access to it
+ERROR    [2017-09-06 01:24:34,822] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/4e/99e88961413c779f1a279ee9bd0cac39adc04b
+ERROR    [2017-09-06 01:24:34,831] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/13/5ca17ebd292c75368aeca5608b47a07c46efa6
+ERROR    [2017-09-06 01:24:34,834] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/4f/54c11f6e7f371d9444d000361a2c544bd92cd4
+ERROR    [2017-09-06 01:24:34,842] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/82/3b6207ae3c39effca5f431e5244991b7f08e62
+ERROR    [2017-09-06 01:24:34,847] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/3f/f680ccf18ea7e80a48603fda45139cc0caae7a
+ERROR    [2017-09-06 01:24:34,847] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/67/0017399cb77968a4e23bd9aeeaae63c6b621ea
+ERROR    [2017-09-06 01:24:34,852] /home/sergey/test/Python/labs/lab3/.git/objects/d4/255ecde265fd02127642d1837e71dde2398b88 not exists or no access to it
+ERROR    [2017-09-06 01:24:34,852] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/2b/902dfd757da28f06f64eff46198a0d3d908fd0
+ERROR    [2017-09-06 01:24:34,862] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/0d/5c83ea8aeb585c4073877b6d10ac591791666f
+ERROR    [2017-09-06 01:24:34,862] /home/sergey/test/Python/labs/lab3/.git/objects/d4/304782d6838709368519ebabb90f51f94372e4 not exists or no access to it
+ERROR    [2017-09-06 01:24:34,873] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/8d/fc643637adcebfc0ce7750da5cc3d583a035e5
+ERROR    [2017-09-06 01:24:34,874] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/0f/7dddae386baa2c957860a9bbd8d40041020e62
+ERROR    [2017-09-06 01:24:34,881] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/9d/aea35e12933f8ee4a61bdbf782f605d96f9da3
+ERROR    [2017-09-06 01:24:34,881] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/2c/4ef41c31a0947bd90b2b0055305fee78d7cedf
+ERROR    [2017-09-06 01:24:34,886] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/17/d10150cae6c7addb6a34688fc35b58cf137df6
+ERROR    [2017-09-06 01:24:34,891] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/32/e87914fa378522f20e5f0941a147a6dd189c5d
+ERROR    [2017-09-06 01:24:34,898] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/58/f0b37005fa1e5357888d25da40d5bd2a972623
+ERROR    [2017-09-06 01:24:34,900] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/15/ba254ff5c9c81fa7acc18a4f046efbdbcd65ff
+ERROR    [2017-09-06 01:24:34,906] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/3e/75f6df2c7173137abeb8eaf5b23b602cc01138
+ERROR    [2017-09-06 01:24:34,908] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/08/32b5c4bae66dd5ef0091f14015750b227e90bb
+ERROR    [2017-09-06 01:24:34,911] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/28/80c8cb3296ab8f7ef960aa1da0ab2676b6bc20
+ERROR    [2017-09-06 01:24:34,911] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/88/79b2de0d132dc9f460b6972b03ff3ac28a9eb3
+ERROR    [2017-09-06 01:24:34,916] /home/sergey/test/Python/labs/lab3/.git/objects/a2/6114004db93308452674e8dcbb463d808fa955 not exists or no access to it
+ERROR    [2017-09-06 01:24:34,920] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/9c/638060660daed3a336cadfc190aa8ec93eff3b
+ERROR    [2017-09-06 01:24:34,922] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/04/0e717e2ecd1d1f750e391d9044e3a14ddc4976
+ERROR    [2017-09-06 01:24:34,923] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/22/362fa88e6368222f1d0ee61e2f38c825b033b3
+ERROR    [2017-09-06 01:24:34,933] /home/sergey/test/Python/labs/lab3/.git/objects/ab/1bb9ad7786bd14bead0f41f2731e0f17168810 not exists or no access to it
+ERROR    [2017-09-06 01:24:34,938] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/9b/8ee545b9317357f9a0cbe812e778eee1c23412
+ERROR    [2017-09-06 01:24:34,938] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/35/a86838f9f742f08db2101e07a208ef4e176e9e
+ERROR    [2017-09-06 01:24:34,943] /home/sergey/test/Python/labs/lab3/.git/objects/e0/914b90ca14d1c610423fb3b94916a875ac0bc8 not exists or no access to it
+ERROR    [2017-09-06 01:24:34,945] /home/sergey/test/Python/labs/lab3/.git/objects/a1/82f2a4688164ab92ca2d09744a69444abb765a not exists or no access to it
+ERROR    [2017-09-06 01:24:34,947] /home/sergey/test/Python/labs/lab3/.git/objects/a1/810f9abea697d1246cb52798678293d438be77 not exists or no access to it
+ERROR    [2017-09-06 01:24:34,954] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/2f/bf1a5289ed64f2f7e488f6b38b412c8b03ef76
+ERROR    [2017-09-06 01:24:34,954] /home/sergey/test/Python/labs/lab3/.git/objects/a1/6c7783e1d8bb30c0b5b7f33611cedbb4365fb4 not exists or no access to it
+ERROR    [2017-09-06 01:24:34,956] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/33/3e63cd1f70a5bfb34e553e809cb16e5f1c5bae
+ERROR    [2017-09-06 01:24:34,961] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/74/3ef780aa260c4dd1df3117bb7861b0edb0012f
+ERROR    [2017-09-06 01:24:34,966] /home/sergey/test/Python/labs/lab3/.git/objects/f1/9fdd1a63c860f6af53b3bf42031f5eceb9c210 not exists or no access to it
+ERROR    [2017-09-06 01:24:34,974] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/10/63e89a7befc3fea3b95689a860bf1b9db07ff2
+ERROR    [2017-09-06 01:24:34,974] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/6e/3ee6bcae489d1667fe524d4dcf57ac4a144e5e
+ERROR    [2017-09-06 01:24:34,977] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/81/2b0921b23d6bfecbd5697e16e220c9eee8f006
+ERROR    [2017-09-06 01:24:34,991] /home/sergey/test/Python/labs/lab3/.git/objects/e1/38662fa58ce5e1f285fac7ae472089ae6fff04 not exists or no access to it
+ERROR    [2017-09-06 01:24:34,991] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/01/11c1f8739fb32ceff3bc479b172e26d706fb47
+ERROR    [2017-09-06 01:24:34,993] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/60/edbdab04ad4c2e37860ceda1d04ca1271bd04d
+ERROR    [2017-09-06 01:24:34,998] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/9e/2c1edaf15826abe7a2fb780da136e71bf79935
+ERROR    [2017-09-06 01:24:34,998] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/75/08653ba2eb95526f5ec1d14d2c7a1b39871350
+ERROR    [2017-09-06 01:24:35,005] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/4a/86c0da41e7a15f14aa3372cb5171411970b0bd
+ERROR    [2017-09-06 01:24:35,010] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/4d/b18510d754f5ee64ae7d87c1acb10cd7fcb38c
+ERROR    [2017-09-06 01:24:35,011] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/55/f63440f3a485fe9e589273da0d279e5a9420d3
+ERROR    [2017-09-06 01:24:35,012] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/2e/43b8eeab8d17446333909bd9f93466d2a27750
+ERROR    [2017-09-06 01:24:35,021] /home/sergey/test/Python/labs/lab3/.git/objects/de/14fb9f267f980fb0962f2e708138d4f2dc3301 not exists or no access to it
+ERROR    [2017-09-06 01:24:35,021] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/47/a484c2812471256538c80dc2fa4b65556b9ec9
+ERROR    [2017-09-06 01:24:35,025] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/90/bb9f3737d8bf4d7682b2f796c5653300c25099
+ERROR    [2017-09-06 01:24:35,031] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/03/3b96f7b9331e13137047f11a310facbe929821
+ERROR    [2017-09-06 01:24:35,032] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/49/2c7ebb80e1e0a50fedcf4fcd1d6fd973dbc4b0
+ERROR    [2017-09-06 01:24:35,032] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/99/b5c6199a09db69593b02066bf0e7a4ea86669a
+ERROR    [2017-09-06 01:24:35,037] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/50/18b17d6dee15b40156f07deaeda35f403e8317
+ERROR    [2017-09-06 01:24:35,043] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/79/9a7bd5c7ea12a2fd31d6e0c7f96c5da6856a37
+ERROR    [2017-09-06 01:24:35,044] /home/sergey/test/Python/labs/lab3/.git/objects/e3/033fb4924904845c2dddec65b52fd813130df7 not exists or no access to it
+ERROR    [2017-09-06 01:24:35,044] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/1c/59ae7fe92eef0fe8557967e333a53e9b8b243b
+ERROR    [2017-09-06 01:24:35,058] /home/sergey/test/Python/labs/lab3/.git/objects/ce/9c4fe908d8eccb69c2b719df0fb9817c386ed3 not exists or no access to it
+ERROR    [2017-09-06 01:24:35,062] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/3a/0f626189312c8c243dc5f828ffde4fdf033471
+ERROR    [2017-09-06 01:24:35,063] /home/sergey/test/Python/labs/lab3/.git/objects/ce/44c27ab7ade6c2d496a73e559d4bce31c7a6ac not exists or no access to it
+ERROR    [2017-09-06 01:24:35,066] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/66/13a40fac1b3ce197e5fd4f8295c6ca13e6aa48
+ERROR    [2017-09-06 01:24:35,072] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/20/56ef8c0f898aa55949d47a50b479055c4b29fe
+ERROR    [2017-09-06 01:24:35,076] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/7d/8825e648c3c5a2db6c908e06236e152ab89f7f
+ERROR    [2017-09-06 01:24:35,077] /home/sergey/test/Python/labs/lab3/.git/objects/c8/0e96f6cb20c5fe8e7426ecdbbe4dcdee51035d not exists or no access to it
+ERROR    [2017-09-06 01:24:35,083] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/7e/0e1b8690e70bb2e728bfa475ce7762fcbe4820
+ERROR    [2017-09-06 01:24:35,087] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/89/1db9a107fa6fa3e8f62d04e5b804c43ae2d354
+ERROR    [2017-09-06 01:24:35,087] /home/sergey/test/Python/labs/lab3/.git/objects/c8/9ea9ff2351a008595b2147576a5369f21e7d2d not exists or no access to it
+ERROR    [2017-09-06 01:24:35,088] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/56/3c1ab825545cd41acbb681e1d82a64ff38fe85
+ERROR    [2017-09-06 01:24:35,098] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/21/e7f95046109db26d6f4d3b9d6537adce45ed09
+ERROR    [2017-09-06 01:24:35,102] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/41/1371f2322000097814e1f65f29efef2c3d251b
+ERROR    [2017-09-06 01:24:35,103] /home/sergey/test/Python/labs/lab3/.git/objects/b6/95fb1aca9a48689b270d5349e2cf5f6d52dc6b not exists or no access to it
+ERROR    [2017-09-06 01:24:35,108] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/5e/967fce0e0417aee61e9ac9c1fe4de7bf432920
+ERROR    [2017-09-06 01:24:35,119] /home/sergey/test/Python/labs/lab3/.git/objects/d3/68bb9af51509040c4b81b47b10fff24f358d13 not exists or no access to it
+ERROR    [2017-09-06 01:24:35,120] /home/sergey/test/Python/labs/lab3/.git/objects/d3/2dd231b92e86f0ec5c0f1583d77a5c89d11b68 not exists or no access to it
+ERROR    [2017-09-06 01:24:35,126] /home/sergey/test/Python/labs/lab3/.git/objects/d5/0d638bc7edeb59217d166e52599414a0bf2d69 not exists or no access to it
+ERROR    [2017-09-06 01:24:35,131] /home/sergey/test/Python/labs/lab3/.git/objects/cd/0c37e47320bf1877d60eb05d5d2d2603487bd8 not exists or no access to it
+ERROR    [2017-09-06 01:24:35,133] /home/sergey/test/Python/labs/lab3/.git/objects/c7/1429f77a37cd521b52aa2538be568c567dfa8e not exists or no access to it
+ERROR    [2017-09-06 01:24:35,140] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/6d/8371935f9d2ce150fcf44558b2e6800e306d8f
+ERROR    [2017-09-06 01:24:35,141] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/86/5dfce2f29ef47d277db658c8658c004a22f9f9
+ERROR    [2017-09-06 01:24:35,148] /home/sergey/test/Python/labs/lab3/.git/objects/fa/6a13f3d3ead055915f876df3df6fe9fd8953f9 not exists or no access to it
+ERROR    [2017-09-06 01:24:35,154] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/83/95561bccb858383d208083f8e71cdb68f07641
+ERROR    [2017-09-06 01:24:35,155] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/48/6eb7fd2469d01afbb3b70bb9b6978c4aa6d51d
+ERROR    [2017-09-06 01:24:35,160] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/43/63cbe691142595ad9d3d90b6127691bc86e2be
+ERROR    [2017-09-06 01:24:35,161] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/7c/095983d505497f865f528b69866e740af2b954
+ERROR    [2017-09-06 01:24:35,167] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/93/fb4f504fcd4d503cefa1c6f0dc713f3d2ca262
+ERROR    [2017-09-06 01:24:35,178] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/62/5d837a78e6a440875f595a8fec62d64fdaf500
+ERROR    [2017-09-06 01:24:35,182] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/29/a68fd6a6d445a4e875e86c3c55821dffd1498c
+ERROR    [2017-09-06 01:24:35,184] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/1d/8eb9c450a92c23e3ba8a0fddd246894b2b24f8
+ERROR    [2017-09-06 01:24:35,185] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/9f/3e871c93aa28aeba3510fa3174421ff40b13c6
+ERROR    [2017-09-06 01:24:35,194] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/37/8cfcc63d23ff8106c1a249c8f0c4568a238f50
+ERROR    [2017-09-06 01:24:35,199] /home/sergey/test/Python/labs/lab3/.git/objects/eb/928fe4a9006bf475b00671b5a833c767993770 not exists or no access to it
+ERROR    [2017-09-06 01:24:35,199] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/95/f8859ea018701bf3746729667f50392d10570a
+ERROR    [2017-09-06 01:24:35,200] /home/sergey/test/Python/labs/lab3/.git/objects/b4/4709ad4c6c7a59ae2bf6642052b2b959025218 not exists or no access to it
+ERROR    [2017-09-06 01:24:35,210] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/57/149846b001d055b8d269bad81d02b58dd514a2
+ERROR    [2017-09-06 01:24:35,212] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/61/d75f8957c9be8d4bc7ffb63c937755574d6a4d
+ERROR    [2017-09-06 01:24:35,213] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/85/a7d9b330e84550b640038d6e806f63434a251d
+ERROR    [2017-09-06 01:24:35,226] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/6a/336ca05a5fa9d8912de69935b8fba76da31f7b
+ERROR    [2017-09-06 01:24:35,231] /home/sergey/test/Python/labs/lab3/.git/objects/d8/9f9c41fa17da2acf04cb0ead989e55f69ef46e not exists or no access to it
+ERROR    [2017-09-06 01:24:35,234] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/5b/d9900eef606bd161da18801b49357e51faa072
+ERROR    [2017-09-06 01:24:35,239] /home/sergey/test/Python/labs/lab3/.git/objects/ff/3a7e385d84e39cb79dbffe4f9443db6e40affd not exists or no access to it
+ERROR    [2017-09-06 01:24:35,246] /home/sergey/test/Python/labs/lab3/.git/objects/b7/221db20c88490a73aaaf00ca0ee2f22ca7ef1d not exists or no access to it
+ERROR    [2017-09-06 01:24:35,250] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/65/0afbe0ba735c8d59a9e4554d7badf8873c2212
+ERROR    [2017-09-06 01:24:35,258] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/5f/8da77fe69985e2871578c5b34745b2309964ad
+ERROR    [2017-09-06 01:24:35,268] Error: No access to /home/sergey/test/Python/labs/lab3/.git/objects/8a/ac22d60ae4c388625f1e6c597e97b399d1f281
+INFO     [2017-09-06 01:24:35,268] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0024_auto_20170624_0044.pyc moved to trash
+INFO     [2017-09-06 01:24:35,276] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0004_auto_20170608_2303.pyc moved to trash
+INFO     [2017-09-06 01:24:35,276] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0013_auto_20170623_2243.py moved to trash
+INFO     [2017-09-06 01:24:35,282] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0017_remove_taskinfo_regex.pyc moved to trash
+INFO     [2017-09-06 01:24:35,287] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0022_remove_trashinfo_recover_conflict.py moved to trash
+INFO     [2017-09-06 01:24:35,291] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0040_auto_20170904_1839.pyc moved to trash
+INFO     [2017-09-06 01:24:35,291] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0021_taskinfo_regex.py moved to trash
+INFO     [2017-09-06 01:24:35,296] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0039_auto_20170904_1829.py moved to trash
+INFO     [2017-09-06 01:24:35,297] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0013_auto_20170623_2243.pyc moved to trash
+INFO     [2017-09-06 01:24:35,302] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0002_auto_20170604_1406.pyc moved to trash
+INFO     [2017-09-06 01:24:35,302] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0033_auto_20170821_1914.py moved to trash
+INFO     [2017-09-06 01:24:35,310] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0011_auto_20170623_2157.pyc moved to trash
+INFO     [2017-09-06 01:24:35,318] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0005_auto_20170608_2305.py moved to trash
+INFO     [2017-09-06 01:24:35,326] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0011_auto_20170623_2157.py moved to trash
+INFO     [2017-09-06 01:24:35,330] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0016_auto_20170623_2320.py moved to trash
+INFO     [2017-09-06 01:24:35,332] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0007_auto_20170613_1721.py moved to trash
+INFO     [2017-09-06 01:24:35,332] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0015_taskinfo_regex.py moved to trash
+INFO     [2017-09-06 01:24:35,350] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0017_remove_taskinfo_regex.py moved to trash
+INFO     [2017-09-06 01:24:35,352] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0042_auto_20170904_2041.pyc moved to trash
+INFO     [2017-09-06 01:24:35,358] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0034_auto_20170821_1916.py moved to trash
+INFO     [2017-09-06 01:24:35,362] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0003_auto_20170608_2303.py moved to trash
+INFO     [2017-09-06 01:24:35,364] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0023_remove_trashinfo_config_path.pyc moved to trash
+INFO     [2017-09-06 01:24:35,366] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0033_auto_20170821_1914.pyc moved to trash
+INFO     [2017-09-06 01:24:35,377] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0002_auto_20170604_1406.py moved to trash
+INFO     [2017-09-06 01:24:35,380] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0016_auto_20170623_2320.pyc moved to trash
+INFO     [2017-09-06 01:24:35,380] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0022_remove_trashinfo_recover_conflict.pyc moved to trash
+INFO     [2017-09-06 01:24:35,381] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0026_auto_20170624_0047.py moved to trash
+INFO     [2017-09-06 01:24:35,399] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0018_auto_20170623_2321.pyc moved to trash
+INFO     [2017-09-06 01:24:35,399] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0006_remove_trashinfo_trash_config_path.pyc moved to trash
+INFO     [2017-09-06 01:24:35,400] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0027_remove_taskinfo_rename_when_name_conflict.py moved to trash
+INFO     [2017-09-06 01:24:35,403] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0041_auto_20170904_2033.pyc moved to trash
+INFO     [2017-09-06 01:24:35,409] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0020_remove_taskinfo_regex.pyc moved to trash
+INFO     [2017-09-06 01:24:35,410] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0038_auto_20170903_1813.pyc moved to trash
+INFO     [2017-09-06 01:24:35,417] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0008_auto_20170622_0958.py moved to trash
+INFO     [2017-09-06 01:24:35,417] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0015_taskinfo_regex.pyc moved to trash
+INFO     [2017-09-06 01:24:35,423] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0026_auto_20170624_0047.pyc moved to trash
+INFO     [2017-09-06 01:24:35,426] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0040_auto_20170904_1839.py moved to trash
+INFO     [2017-09-06 01:24:35,431] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0007_auto_20170613_1721.pyc moved to trash
+INFO     [2017-09-06 01:24:35,433] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0001_initial.pyc moved to trash
+INFO     [2017-09-06 01:24:35,439] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0044_remove_taskinfo_k.pyc moved to trash
+INFO     [2017-09-06 01:24:35,441] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0019_auto_20170623_2322.pyc moved to trash
+INFO     [2017-09-06 01:24:35,451] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0029_taskinfo_log_path.pyc moved to trash
+INFO     [2017-09-06 01:24:35,453] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0042_auto_20170904_2041.py moved to trash
+INFO     [2017-09-06 01:24:35,454] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0034_auto_20170821_1916.pyc moved to trash
+INFO     [2017-09-06 01:24:35,461] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0009_taskinfo_trash.pyc moved to trash
+INFO     [2017-09-06 01:24:35,468] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0041_auto_20170904_2033.py moved to trash
+INFO     [2017-09-06 01:24:35,468] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0038_auto_20170903_1813.py moved to trash
+INFO     [2017-09-06 01:24:35,469] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0031_auto_20170624_0052.pyc moved to trash
+INFO     [2017-09-06 01:24:35,487] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0001_initial.py moved to trash
+INFO     [2017-09-06 01:24:35,487] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0037_auto_20170903_1810.pyc moved to trash
+INFO     [2017-09-06 01:24:35,488] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0019_auto_20170623_2322.py moved to trash
+INFO     [2017-09-06 01:24:35,490] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0010_taskinfo_operation_type.py moved to trash
+INFO     [2017-09-06 01:24:35,499] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0035_auto_20170821_1919.pyc moved to trash
+INFO     [2017-09-06 01:24:35,502] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0027_remove_taskinfo_rename_when_name_conflict.pyc moved to trash
+INFO     [2017-09-06 01:24:35,508] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0024_auto_20170624_0044.py moved to trash
+INFO     [2017-09-06 01:24:35,508] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0036_auto_20170828_2033.py moved to trash
+INFO     [2017-09-06 01:24:35,509] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0025_taskinfo_rename_when_name_conflict.pyc moved to trash
+INFO     [2017-09-06 01:24:35,517] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0028_auto_20170624_0049.py moved to trash
+INFO     [2017-09-06 01:24:35,523] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0004_auto_20170608_2303.py moved to trash
+INFO     [2017-09-06 01:24:35,525] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0032_auto_20170624_0921.pyc moved to trash
+INFO     [2017-09-06 01:24:35,526] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0012_auto_20170623_2158.pyc moved to trash
+INFO     [2017-09-06 01:24:35,533] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0036_auto_20170828_2033.pyc moved to trash
+INFO     [2017-09-06 01:24:35,536] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0043_taskinfo_k.py moved to trash
+INFO     [2017-09-06 01:24:35,540] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0006_remove_trashinfo_trash_config_path.py moved to trash
+INFO     [2017-09-06 01:24:35,547] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0020_remove_taskinfo_regex.py moved to trash
+INFO     [2017-09-06 01:24:35,550] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0044_remove_taskinfo_k.py moved to trash
+INFO     [2017-09-06 01:24:35,554] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0023_remove_trashinfo_config_path.py moved to trash
+INFO     [2017-09-06 01:24:35,560] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0028_auto_20170624_0049.pyc moved to trash
+INFO     [2017-09-06 01:24:35,561] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0018_auto_20170623_2321.py moved to trash
+INFO     [2017-09-06 01:24:35,565] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0008_auto_20170622_0958.pyc moved to trash
+INFO     [2017-09-06 01:24:35,572] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0003_auto_20170608_2303.pyc moved to trash
+INFO     [2017-09-06 01:24:35,573] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0039_auto_20170904_1829.pyc moved to trash
+INFO     [2017-09-06 01:24:35,578] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0029_taskinfo_log_path.py moved to trash
+INFO     [2017-09-06 01:24:35,583] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0014_auto_20170623_2253.pyc moved to trash
+INFO     [2017-09-06 01:24:35,589] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0030_auto_20170624_0051.py moved to trash
+INFO     [2017-09-06 01:24:35,590] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0005_auto_20170608_2305.pyc moved to trash
+INFO     [2017-09-06 01:24:35,598] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0035_auto_20170821_1919.py moved to trash
+INFO     [2017-09-06 01:24:35,602] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0012_auto_20170623_2158.py moved to trash
+INFO     [2017-09-06 01:24:35,604] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0031_auto_20170624_0052.py moved to trash
+INFO     [2017-09-06 01:24:35,610] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0030_auto_20170624_0051.pyc moved to trash
+INFO     [2017-09-06 01:24:35,612] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0037_auto_20170903_1810.py moved to trash
+INFO     [2017-09-06 01:24:35,619] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0014_auto_20170623_2253.py moved to trash
+INFO     [2017-09-06 01:24:35,622] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0043_taskinfo_k.pyc moved to trash
+INFO     [2017-09-06 01:24:35,623] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0010_taskinfo_operation_type.pyc moved to trash
+INFO     [2017-09-06 01:24:35,629] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0021_taskinfo_regex.pyc moved to trash
+INFO     [2017-09-06 01:24:35,635] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0009_taskinfo_trash.py moved to trash
+INFO     [2017-09-06 01:24:35,642] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0032_auto_20170624_0921.py moved to trash
+INFO     [2017-09-06 01:24:35,646] /home/sergey/test/Python/labs/lab3/TrashExplorer/migrations/0025_taskinfo_rename_when_name_conflict.py moved to trash
+ERROR    [2017-09-06 01:24:35,646] Error: No access to /home/sergey/test/Python/labs/lab2/.git/objects/12/f37ed383f7a342e6e6f95f164c94d3fb200b8a
+ERROR    [2017-09-06 01:24:35,651] Error: No access to /home/sergey/test/Python/labs/lab2/.git/objects/44/e5d8d398432066d64dfb04a905fc43558fadad
+ERROR    [2017-09-06 01:24:35,662] /home/sergey/test/Python/labs/lab2/.git/objects/cf/36b709f9cb8a59c6aa0f198ac8bec63bdba77e not exists or no access to it
+ERROR    [2017-09-06 01:24:35,664] Error: No access to /home/sergey/test/Python/labs/lab2/.git/objects/67/11606311e2664bd835f92b5c114681d2e284f5
+ERROR    [2017-09-06 01:24:35,664] Error: No access to /home/sergey/test/Python/labs/lab2/.git/objects/45/240ce5a9e36e09fe62b6bee6bc30244677ac44
+ERROR    [2017-09-06 01:24:35,670] Error: No access to /home/sergey/test/Python/labs/lab2/.git/objects/2b/ca007e530591ef1760618bf3ac5425c4fda417
+ERROR    [2017-09-06 01:24:35,672] Error: No access to /home/sergey/test/Python/labs/lab2/.git/objects/7a/4610740ffdc404ece0728219138ff0a67c2821
+ERROR    [2017-09-06 01:24:35,675] Error: No access to /home/sergey/test/Python/labs/lab2/.git/objects/94/a25f7f4cb416c083d265558da75d457237d671
+ERROR    [2017-09-06 01:24:35,680] /home/sergey/test/Python/labs/lab2/.git/objects/a6/7951b6275ce82841f470fd463a54d6a18dbb33 not exists or no access to it
+ERROR    [2017-09-06 01:24:35,681] /home/sergey/test/Python/labs/lab2/.git/objects/a6/6c6af200636a0c32b483c3210a82c1352168fe not exists or no access to it
+ERROR    [2017-09-06 01:24:35,685] Error: No access to /home/sergey/test/Python/labs/lab2/.git/objects/76/72040888c1aa000967761e8c15049a31fd8a70
+ERROR    [2017-09-06 01:24:35,686] Error: No access to /home/sergey/test/Python/labs/lab2/.git/objects/2a/eba1e0109162f3a350c1094c005d2292031655
+ERROR    [2017-09-06 01:24:35,689] Error: No access to /home/sergey/test/Python/labs/lab2/.git/objects/2c/1c3ab69614698ee8a6336dd06f3029d31d070a
+ERROR    [2017-09-06 01:24:35,693] Error: No access to /home/sergey/test/Python/labs/lab2/.git/objects/15/d1fb6137058cf1c173d83b3fb9dc9d5a99361e
+ERROR    [2017-09-06 01:24:35,694] Error: No access to /home/sergey/test/Python/labs/lab2/.git/objects/08/56d7444c18e6138a3e3d21240c6936aac6710b
+ERROR    [2017-09-06 01:24:35,697] Error: No access to /home/sergey/test/Python/labs/lab2/.git/objects/88/9afb04f2af93c62c76f8f095e56a801ebc982c
+ERROR    [2017-09-06 01:24:35,700] /home/sergey/test/Python/labs/lab2/.git/objects/f9/449c99408a3d8bf687e4dc5cf68057cf7c45ca not exists or no access to it
+ERROR    [2017-09-06 01:24:35,704] Error: No access to /home/sergey/test/Python/labs/lab2/.git/objects/64/ff968234a659bc28ab7aa1b034b2c933edcf39
+ERROR    [2017-09-06 01:24:35,707] Error: No access to /home/sergey/test/Python/labs/lab2/.git/objects/8f/f8789450cbb0c9c6d07fb23cb0a00c72c699f3
+ERROR    [2017-09-06 01:24:35,707] /home/sergey/test/Python/labs/lab2/.git/objects/ed/14cc51c26f68632c72988c689d20bb22c1bbb8 not exists or no access to it
+ERROR    [2017-09-06 01:24:35,709] Error: No access to /home/sergey/test/Python/labs/lab2/.git/objects/70/fe2fb956d71fb3a4abcdf37865c05f072155f4
+ERROR    [2017-09-06 01:24:35,714] Error: No access to /home/sergey/test/Python/labs/lab2/.git/objects/60/ee4b3c5ea01a23b062d4d7bfdcaa6a6f0fd122
+ERROR    [2017-09-06 01:24:35,718] Error: No access to /home/sergey/test/Python/labs/lab2/.git/objects/73/e926c9d66f4ae10300c02a842aab56b7f3935d
+ERROR    [2017-09-06 01:24:35,718] /home/sergey/test/Python/labs/lab2/.git/objects/fd/38c8a217e53dbd9196b11b872f0a9a0096bf08 not exists or no access to it
+ERROR    [2017-09-06 01:24:35,726] Error: No access to /home/sergey/test/Python/labs/lab2/.git/objects/4a/cd0065bf53d9c6b6efe61a9e5305c3b505012f
+ERROR    [2017-09-06 01:24:35,727] Error: No access to /home/sergey/test/Python/labs/lab2/.git/objects/84/6627fad69f04e29d1a4aa4d3ae5fb33fd44b9d
+ERROR    [2017-09-06 01:24:35,731] Error: No access to /home/sergey/test/Python/labs/lab2/.git/objects/53/49949fee7ef54065adada6f495f902f59fc3de
+ERROR    [2017-09-06 01:24:35,736] Error: No access to /home/sergey/test/Python/labs/lab2/.git/objects/90/dd135eb84ff9c49b4220abc9c13a71e73804b8
+ERROR    [2017-09-06 01:24:35,738] Error: No access to /home/sergey/test/Python/labs/lab2/.git/objects/2e/6a3d449d684767a830471d1c6177b8f2e9ec6f
+ERROR    [2017-09-06 01:24:35,738] Error: No access to /home/sergey/test/Python/labs/lab2/.git/objects/5d/b18870e1b74b96ad94ea204b2dd0c4fc1ee942
+ERROR    [2017-09-06 01:24:35,744] /home/sergey/test/Python/labs/lab2/.git/objects/ef/30c179be338cbad1fcca2ea01a9f1444c0400e not exists or no access to it
+ERROR    [2017-09-06 01:24:35,749] Error: No access to /home/sergey/test/Python/labs/lab2/.git/objects/7e/52e3fd75f724cd6de934afbd714a3df5a8bab2
+ERROR    [2017-09-06 01:24:35,756] /home/sergey/test/Python/labs/lab2/.git/objects/bc/1ec470800ae14e5137dccfaded74d0ab0ea22e not exists or no access to it
+ERROR    [2017-09-06 01:24:35,756] Error: No access to /home/sergey/test/Python/labs/lab2/.git/objects/7d/fbca88e32b4018c7158cce07c5965baf7240c6
+ERROR    [2017-09-06 01:24:35,757] Error: No access to /home/sergey/test/Python/labs/lab2/.git/objects/89/065e86e16795db5d4ae4ebabd84a682153233c
+ERROR    [2017-09-06 01:24:35,767] /home/sergey/test/Python/labs/lab2/.git/objects/af/6f3818ee79e42e9608d7d15a670fb51b1ff7de not exists or no access to it
+ERROR    [2017-09-06 01:24:35,768] /home/sergey/test/Python/labs/lab2/.git/objects/e9/16042e09d572e43061aa0506a083264f7a6652 not exists or no access to it
+ERROR    [2017-09-06 01:24:35,774] /home/sergey/test/Python/labs/lab2/.git/objects/b6/8b9c96f0f1f5567557591659035e8b1ba22e65 not exists or no access to it
+ERROR    [2017-09-06 01:24:35,776] /home/sergey/test/Python/labs/lab2/.git/objects/ac/833dcd6595263bea729361a4bee5ab3c315988 not exists or no access to it
+ERROR    [2017-09-06 01:24:35,781] /home/sergey/test/Python/labs/lab2/.git/objects/d5/91aa18131b399cd01d099165d46829307c4e9a not exists or no access to it
+ERROR    [2017-09-06 01:24:35,785] /home/sergey/test/Python/labs/lab2/.git/objects/b0/49afd68840d6f5d0a65d0c885ef6c71278095e not exists or no access to it
+ERROR    [2017-09-06 01:24:35,785] Error: No access to /home/sergey/test/Python/labs/lab2/.git/objects/1d/e301259a85ca3421eaec329962f33744e0493e
+ERROR    [2017-09-06 01:24:35,787] /home/sergey/test/Python/labs/lab2/.git/objects/b0/687727d41c75967e7cb52b5a466bd69b325bfc not exists or no access to it
+ERROR    [2017-09-06 01:24:35,795] Error: No access to /home/sergey/test/Python/labs/lab2/.git/objects/7b/31d617aec3b9ed88ecd99c5697c256539d7104
+ERROR    [2017-09-06 01:24:35,796] Error: No access to /home/sergey/test/Python/labs/lab2/.git/objects/1f/6c1b901afc9920948e1a47975fa74b1f78c416
+ERROR    [2017-09-06 01:24:35,801] Error: No access to /home/sergey/test/Python/labs/lab2/.git/objects/95/a4bd57a080f72c2d55755c7b47aca915364631
+ERROR    [2017-09-06 01:24:35,803] Error: No access to /home/sergey/test/Python/labs/lab2/.git/objects/5f/0bbd1cd38b967e63368a52a8e7cb39a6243f7d
+ERROR    [2017-09-06 01:24:35,824] Error: No access to /home/sergey/test/Python/2017/fufel/python_savelev_labs/.git/objects/8a/4aca36ab4a35e539627f9af4ac59815ec33093
+INFO     [2017-09-06 01:24:50,757] Trash path /home/sergey/RainbowTrash
