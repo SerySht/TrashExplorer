@@ -1,10 +1,10 @@
 {% extends 'TrashExplorer/base.html' %}
 {% block content %}
 
-<form method="POST" action="">{% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Save changes" >
+    <form method="POST" action="">{% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Save changes" >
 
-</form>
+    </form>
 
 {% endblock %}

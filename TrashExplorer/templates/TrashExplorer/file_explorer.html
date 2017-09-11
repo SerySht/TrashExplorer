@@ -4,17 +4,17 @@
 {% for file, path, is_dir in url_list %}
         {% if is_dir %}
             <form action="{% url 'file_explorer'  %}"  method="post" style='float:left;'>{% csrf_token %}
-              <button type="submit" name="dir" value="{{path}}" class="btn btn-default">{{file}}</button>
+              <button name="dir" value="{{path}}" class="btn btn-default">{{file}}</button>
             </form>
         {% else %}
 
             <form action="{% url 'file_explorer'  %}"  method="post" style='float:left;'>{% csrf_token %}
-              <button type="submit" name="dir" value="{{path}}" class="btn btn-success">{{file}}</button>
+              <button name="dir" value="{{path}}" class="btn btn-success">{{file}}</button>
             </form>
         {% endif %}
 
         <form action="{% url 'add_task_from_fe'  %}"  method="post">{% csrf_token %}
-          <button type="submit" name="del_dir" value="{{path}}" class="btn btn-danger"> Delete</button>
+          <button name="del_dir" value="{{path}}" class="btn btn-danger"> Delete</button>
         </form><br>
 
 {% endfor %}

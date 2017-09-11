@@ -6,9 +6,13 @@
         <input type="submit" value="Delete trash">
     </form><br>
 
+
     <form action="{% url 'wipe_trash' trash_id %}" method="post">{% csrf_token %}
         <input type="submit" value="Wipe trash">
-    </form><br><br>
+    </form><br>
+
+     <u>Trash size: {{ trash_size }} bytes </u>  <br>
+
 
 
     {% if trash_list %}
@@ -22,7 +26,7 @@
             <input type="submit" value="Recover chosen">
          </form>
 
-{% else %}
+    {% else %}
         <h3>You don't have any files in this trash</h3>
     {% endif %}
 

@@ -7,7 +7,6 @@ lock = multiprocessing.Lock()
 
 
 def run_task(task_id):
-
     task_obj = get_object_or_404(TaskInfo, id=task_id)
     task_obj.is_busy = True
     trash_obj = get_object_or_404(TrashInfo, id=task_obj.trash.id)
@@ -18,6 +17,10 @@ def run_task(task_id):
         task_obj.save()
 
     task_dict = task_obj.__dict__
+    for key, value in task_dict.items():
+        if value is None:
+            del task_dict[key]
+
     trash_dict = {}
     trash_dict.update(trash_obj.__dict__)
     trash_dict.update(task_dict)

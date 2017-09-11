@@ -1,18 +1,8 @@
 {% extends 'TrashExplorer/base.html' %}
 {% block content %}
+    <form method="POST" action="/add_task/">{% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Create Task" >
 
-
-<form method="POST" action="/add_task/">{% csrf_token %}
-    {{ form.as_p }}
-
-
-<input type="submit" value="Create Task" >
-
-</form>
-
-
-
-
-
-
+    </form>
 {% endblock %}

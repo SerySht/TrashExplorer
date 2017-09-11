@@ -1,19 +1,25 @@
 {% extends 'TrashExplorer/base.html' %}
 {% block content %}
 
-{% if object_list %}
-	<ul>
-		{% for trash_name in object_list %}
-			<li><a href= " {% url 'trash_details' trash_name.id %}"> {{ trash_name }}</a> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
-				<a href=" {% url 'update_trash' trash_name.id %}" > Edit</a>
-			</li>
-		{% endfor %}
-	</ul>
+	{% if object_list %}
 
+			{% for trash_name in object_list %}
 
-{% else %}
-	<h3>You don't have any trashes</h3>
-{% endif %}
+                <form action="{% url 'trash_details' trash_name.id  %}" style="display: inline;">{% csrf_token %}
+                        <input type="submit"  class="btn btn-primary" value={{ trash_name }}>
+                </form>
+
+                <form action="{% url 'update_trash' trash_name.id %}" style="display: inline;">{% csrf_token %}
+                        <input type="submit" value= Edit >
+                </form>
+                <br><br>
+
+			{% endfor %}
+
+	{% else %}
+		<h3>You don't have any trashes</h3>
+	{% endif %}
+
 {% endblock %}
 
 

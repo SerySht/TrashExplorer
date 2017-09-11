@@ -6,8 +6,8 @@
 		{% for task in object_list %}
 			{% if not task.done %}
 				<li>Trash: {{task.trash}}<br>
-					To delete: {{task}}
-					<br>
+					To delete: {{task}}<br>
+
 				{% if not task.is_busy %}
 
 					{% if not task.trash.is_busy %}

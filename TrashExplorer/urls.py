@@ -26,7 +26,7 @@ urlpatterns = [
 
     url(r'^(?P<trash_id>[0-9]+)/delete_trash/$', views.delete_trash, name='delete_trash'),
 
-    url(r'^delete_task/(?P<task_id>[0-9]+)/$', views.delete_task, name='delete_task'),
+    url(r'^delete_task/(?P<pk>\d+)/$', views.DeleteTask.as_view(), name='delete_task'),
 
     url(r'^add_task_from_fe/$', views.add_task_from_fe, name='add_task_from_fe'),
 
