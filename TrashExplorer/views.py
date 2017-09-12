@@ -5,7 +5,7 @@ from smrm import trash, utils
 from TrashExplorer.forms import TrashForm, TaskForm
 from TrashExplorer.runtask import run_task
 from django.shortcuts import redirect
-from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, CreateView, UpdateView
 import multiprocessing
 import os
 
@@ -116,14 +116,19 @@ class UpdateTask(UpdateView):
               )
 
 
-class DeleteTask(DeleteView):
-    model = TaskInfo
-    success_url = '/task_list'
+def delete_task(request, task_id):
+    task_object = get_object_or_404(TaskInfo, id=task_id)
+    task_object.delete()
+    return redirect('/task_list')
 
 
 def run(request, task_id):
-    p = multiprocessing.Process(target=run_task, args=(task_id,))
-    p.start()
+    while multiprocessing.cpu_count() <= len(multiprocessing.active_children()):
+        pass
+    if multiprocessing.cpu_count() > len(multiprocessing.active_children()):
+        p = multiprocessing.Process(target=run_task, args=(task_id,))
+        p.start()
+
     return redirect('/task_list')
 
 

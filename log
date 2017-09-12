@@ -1,32 +1,29 @@
-INFO     [2017-09-11 00:56:19,000] Trash path /home/sergey/Megan
-INFO     [2017-09-11 00:56:19,002] Trash is empty
-INFO     [2017-09-11 00:56:22,045] Trash path /home/sergey/Megan
-INFO     [2017-09-11 00:56:22,046] Trash wiped
-INFO     [2017-09-11 00:56:22,073] Trash path /home/sergey/Megan
-INFO     [2017-09-11 00:56:22,074] Trash is empty
-INFO     [2017-09-11 00:56:22,703] Trash path /home/sergey/Megan
-INFO     [2017-09-11 00:56:22,704] Trash wiped
-INFO     [2017-09-11 00:56:22,740] Trash path /home/sergey/Megan
-INFO     [2017-09-11 00:56:22,741] Trash is empty
-INFO     [2017-09-11 00:56:23,077] Trash path /home/sergey/Megan
-INFO     [2017-09-11 00:56:23,078] Trash wiped
-INFO     [2017-09-11 00:56:23,101] Trash path /home/sergey/Megan
-INFO     [2017-09-11 00:56:23,101] Trash is empty
-INFO     [2017-09-11 00:56:30,401] Trash path /home/sergey/MegaTrash
-INFO     [2017-09-11 00:56:30,402] Trash is empty
-INFO     [2017-09-11 00:56:30,967] Trash path /home/sergey/MegaTrash
-INFO     [2017-09-11 00:56:45,498] Trash path /home/sergey/RainbowTrash
-INFO     [2017-09-11 00:56:45,600] /home/sergey/test/f431 moved to trash
-INFO     [2017-09-11 00:56:48,651] Trash path /home/sergey/Megan
-INFO     [2017-09-11 00:56:48,652] Trash is empty
-INFO     [2017-09-11 00:56:51,722] Trash path /home/sergey/RainbowTrash
-INFO     [2017-09-11 00:57:01,426] Trash path /home/sergey/Megan
-INFO     [2017-09-11 00:57:01,521] /home/sergey/test/f35 moved to trash
-INFO     [2017-09-11 00:57:04,980] Trash path /home/sergey/Megan
-INFO     [2017-09-11 00:57:06,847] Trash path /home/sergey/Megan
-INFO     [2017-09-11 00:57:06,849] Trash wiped
-INFO     [2017-09-11 00:57:06,875] Trash path /home/sergey/Megan
-INFO     [2017-09-11 00:57:06,875] Trash is empty
-INFO     [2017-09-11 00:57:07,447] Trash path /home/sergey/Megan
-INFO     [2017-09-11 00:57:08,628] Trash path /home/sergey/RainbowTrash
-INFO     [2017-09-11 00:57:09,320] Trash path /home/sergey/RainbowTrash
+INFO     [2017-09-12 03:20:39,707] Trash path /home/sergey/RainbowTrash
+INFO     [2017-09-12 03:20:40,473] Trash path /home/sergey/RainbowTrash
+INFO     [2017-09-12 03:20:41,302] Trash path /home/sergey/SuperTrash
+INFO     [2017-09-12 03:20:41,867] Trash path /home/sergey/SuperTrash
+INFO     [2017-09-12 03:20:42,423] Trash path /home/sergey/Trash
+INFO     [2017-09-12 03:20:43,065] Trash path /home/sergey/Trash
+INFO     [2017-09-12 03:20:43,868] Trash path /home/sergey/MegaTrash
+INFO     [2017-09-12 03:20:44,387] Trash path /home/sergey/MegaTrash
+INFO     [2017-09-12 03:20:44,945] Trash path /home/sergey/RaindowTrash
+INFO     [2017-09-12 03:20:45,459] Trash path /home/sergey/RaindowTrash
+INFO     [2017-09-12 03:20:46,096] Trash path /home/sergey/Trash2
+INFO     [2017-09-12 03:20:46,546] Trash path /home/sergey/Trash2
+INFO     [2017-09-12 03:20:47,209] Trash path /home/sergey/Trash3
+INFO     [2017-09-12 03:20:47,818] Trash path /home/sergey/Trash3
+ERROR    [2017-09-12 03:20:47,829] Internal Server Error: /97/delete_trash/
+Traceback (most recent call last):
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/sergey/.local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sergey/labs/lab3/TrashExplorer/views.py", line 54, in delete_trash
+    t.delete_trash()
+  File "build/bdist.linux-x86_64/egg/smrm/trash.py", line 274, in delete_trash
+    self._delete_directory(self.trash_path)
+  File "build/bdist.linux-x86_64/egg/smrm/trash.py", line 235, in _delete_directory
+    os.rmdir(os.path.join(root,d))
+OSError: [Errno 20] Not a directory: '/home/sergey/Trash3/425139'

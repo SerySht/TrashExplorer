@@ -11,18 +11,18 @@
 				{% if not task.is_busy %}
 
 					{% if not task.trash.is_busy %}
-							<form action="{% url 'run' task.id %}" method="post" style="display: inline;">{% csrf_token %}
+							<form action="{% url 'run' task.id %}" style="display: inline;">
         						<input type="submit" value="Run task">
 							</form>
 					{% else %}
 						Trash is busy!
 					{% endif %}
 
-					<form action="{% url 'delete_task' task.id %}" method="post" style="display: inline;">{% csrf_token %}
+					<form action="{% url 'delete_task' task.id %}" style="display: inline;">
         				<input type="submit" value="Del task">
 					</form>
 
-					<form action="{% url 'update_task' task.id %}" method="get" style="display: inline;">{% csrf_token %}
+					<form action="{% url 'update_task' task.id %}" style="display: inline;">
         				<input type="submit" value="Update task">
 					</form>
 				{% else %}

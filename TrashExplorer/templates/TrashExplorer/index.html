@@ -5,11 +5,11 @@
 
 			{% for trash_name in object_list %}
 
-                <form action="{% url 'trash_details' trash_name.id  %}" style="display: inline;">{% csrf_token %}
+                <form action="{% url 'trash_details' trash_name.id  %}" style="display: inline;">
                         <input type="submit"  class="btn btn-primary" value={{ trash_name }}>
                 </form>
 
-                <form action="{% url 'update_trash' trash_name.id %}" style="display: inline;">{% csrf_token %}
+                <form action="{% url 'update_trash' trash_name.id %}"  style="display: inline;">
                         <input type="submit" value= Edit >
                 </form>
                 <br><br>

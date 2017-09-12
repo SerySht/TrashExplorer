@@ -7,6 +7,7 @@ lock = multiprocessing.Lock()
 
 
 def run_task(task_id):
+
     task_obj = get_object_or_404(TaskInfo, id=task_id)
     task_obj.is_busy = True
     trash_obj = get_object_or_404(TrashInfo, id=task_obj.trash.id)
