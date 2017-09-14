@@ -7,6 +7,7 @@ from TrashExplorer.runtask import run_task
 from django.shortcuts import redirect
 from django.views.generic import ListView, CreateView, UpdateView
 import multiprocessing
+from multiprocessing.pool import ThreadPool
 import os
 
 
@@ -122,13 +123,11 @@ def delete_task(request, task_id):
     return redirect('/task_list')
 
 
-def run(request, task_id):
-    while multiprocessing.cpu_count() <= len(multiprocessing.active_children()):
-        pass
-    if multiprocessing.cpu_count() > len(multiprocessing.active_children()):
-        p = multiprocessing.Process(target=run_task, args=(task_id,))
-        p.start()
+pool = ThreadPool(processes=multiprocessing.cpu_count())
 
+
+def run(request, task_id):
+    pool.apply_async(run_task, args=(task_id,))
     return redirect('/task_list')
 
 
