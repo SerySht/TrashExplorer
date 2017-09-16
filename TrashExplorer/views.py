@@ -3,11 +3,9 @@ from django.shortcuts import render, get_object_or_404
 from TrashExplorer.models import TrashInfo, TaskInfo
 from smrm import trash, utils
 from TrashExplorer.forms import TrashForm, TaskForm
-from TrashExplorer.runtask import run_task
+from TrashExplorer.utils import run_task, MyLock, MyPool
 from django.shortcuts import redirect
 from django.views.generic import ListView, CreateView, UpdateView
-import multiprocessing
-from multiprocessing.pool import ThreadPool
 import os
 
 
@@ -33,7 +31,6 @@ class UpdateTrash(UpdateView):
               "rename_when_nameconflict",
               "log_path",
               "dry_run",
-              "verbose"
               )
 
 
@@ -43,7 +40,6 @@ def trash_details(request, trash_id):
     context = {
         "trash_id": trash_id,
         "trash_list": t.show_trash(),
-        "trash_size": utils.get_size(trash_object.trash_path)
     }
     return render(request, 'TrashExplorer/trash_details.html', context)
 
@@ -78,9 +74,6 @@ def recover(request, trash_id):
     return redirect('trash_details', trash_id)
 
 
-###############
-
-
 class TaskList(ListView):
     model = TaskInfo
     template_name = "TrashExplorer/task_list.html"
@@ -109,11 +102,9 @@ class UpdateTask(UpdateView):
               "regex",
               "silent",
               "dry_run",
-              "force",
               "log_path",
               "trash_maximum_size",
               "file_storage_time",
-              "verbose",
               )
 
 
@@ -123,11 +114,10 @@ def delete_task(request, task_id):
     return redirect('/task_list')
 
 
-pool = ThreadPool(processes=multiprocessing.cpu_count())
-
-
 def run(request, task_id):
-    pool.apply_async(run_task, args=(task_id,))
+    pool = MyPool()
+    lock = MyLock()
+    pool.apply_async(run_task, args=(task_id, lock))
     return redirect('/task_list')
 
 

@@ -4,7 +4,7 @@
 {% if object_list %}
 	<ul>
 		{% for task in object_list %}
-			{% if not task.done %}
+			{% if not task.is_done %}
 				<li>Trash: {{task.trash}}<br>
 					To delete: {{task}}<br>
 

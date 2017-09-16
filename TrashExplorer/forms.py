@@ -14,14 +14,11 @@ class TrashForm(forms.ModelForm):
             "trash_maximum_size",
             "file_storage_time",
             "silent",
-            "verbose",
             "dry_run"
         ]
 
 
 class TaskForm(forms.ModelForm):
-    regex = forms.CharField(required=False, help_text="Put regex if deleting by regex")
-
     class Meta:
         model = TaskInfo
         fields = [
@@ -31,9 +28,7 @@ class TaskForm(forms.ModelForm):
             "regex",
             "silent",
             "dry_run",
-            "force",
             "log_path",
             "trash_maximum_size",
             "file_storage_time",
-            "verbose",
         ]

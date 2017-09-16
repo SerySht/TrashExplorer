@@ -11,10 +11,6 @@
         <input type="submit" value="Wipe trash">
     </form><br>
 
-     <u>Trash size: {{ trash_size }} bytes </u>  <br>
-
-
-
     {% if trash_list %}
         <form action="{% url 'recover' trash_id %}" method="post">{% csrf_token %}
             {% for file_info, _, trash_path, old_path in trash_list %}
