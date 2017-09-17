@@ -4,7 +4,6 @@ import multiprocessing
 from django.shortcuts import get_object_or_404
 from TrashExplorer.models import TrashInfo, TaskInfo
 from multiprocessing.pool import ThreadPool
-import logging
 
 
 def singleton(cls):
@@ -63,11 +62,10 @@ def run_task(task_id, lock):
         trash_dict = {}
         trash_dict.update(trash_obj.__dict__)
         trash_dict.update(task_dict)
-        
+
         t = trash.Trash(task_obj.trash.trash_path,
                         storage_time=trash_dict["file_storage_time"],
                         trash_maximum_size=trash_dict["trash_maximum_size"],
-                        log_path=trash_dict["log_path"],
                         dry_run=trash_dict["dry_run"],
                         verbose=True
                         )

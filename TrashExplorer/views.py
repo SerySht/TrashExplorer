@@ -29,7 +29,6 @@ class UpdateTrash(UpdateView):
               "trash_maximum_size",
               "file_storage_time",
               "rename_when_nameconflict",
-              "log_path",
               "dry_run",
               )
 
@@ -63,7 +62,6 @@ def recover(request, trash_id):
     trash_object = get_object_or_404(TrashInfo, id=trash_id)
     t = trash.Trash(trash_object.trash_path,
                     recover_conflict=trash_object.rename_when_nameconflict,
-                    log_path=trash_object.log_path
                     )
 
     recover_list = request.POST.getlist('file')
@@ -102,7 +100,6 @@ class UpdateTask(UpdateView):
               "regex",
               "silent",
               "dry_run",
-              "log_path",
               "trash_maximum_size",
               "file_storage_time",
               )

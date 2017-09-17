@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3cfadddf-7f81-4c8c-b9a5-753e8ae7d0bb" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lab003.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/log" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/TrashExplorer/runtask.py" afterPath="$PROJECT_DIR$/TrashExplorer/utils.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/sergey.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/sergey.xml" />
@@ -14,6 +11,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.txt" afterPath="$PROJECT_DIR$/README.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TrashExplorer/__init__.py" afterPath="$PROJECT_DIR$/TrashExplorer/__init__.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TrashExplorer/admin.py" afterPath="$PROJECT_DIR$/TrashExplorer/admin.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TrashExplorer/apps.py" afterPath="$PROJECT_DIR$/TrashExplorer/apps.py" />
@@ -62,6 +60,9 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TrashExplorer/migrations/0042_auto_20170904_2041.py" afterPath="$PROJECT_DIR$/TrashExplorer/migrations/0042_auto_20170904_2041.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TrashExplorer/migrations/0043_taskinfo_k.py" afterPath="$PROJECT_DIR$/TrashExplorer/migrations/0043_taskinfo_k.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TrashExplorer/migrations/0044_remove_taskinfo_k.py" afterPath="$PROJECT_DIR$/TrashExplorer/migrations/0044_remove_taskinfo_k.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TrashExplorer/migrations/0045_remove_trashinfo_verbose.py" afterPath="$PROJECT_DIR$/TrashExplorer/migrations/0045_remove_trashinfo_verbose.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TrashExplorer/migrations/0046_auto_20170915_0256.py" afterPath="$PROJECT_DIR$/TrashExplorer/migrations/0046_auto_20170915_0256.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TrashExplorer/migrations/0047_auto_20170915_0406.py" afterPath="$PROJECT_DIR$/TrashExplorer/migrations/0047_auto_20170915_0406.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TrashExplorer/migrations/__init__.py" afterPath="$PROJECT_DIR$/TrashExplorer/migrations/__init__.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TrashExplorer/models.py" afterPath="$PROJECT_DIR$/TrashExplorer/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TrashExplorer/static/TrashExplorer/bootstrap.min.css" afterPath="$PROJECT_DIR$/TrashExplorer/static/TrashExplorer/bootstrap.min.css" />
@@ -76,10 +77,12 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TrashExplorer/templates/TrashExplorer/update_form.html" afterPath="$PROJECT_DIR$/TrashExplorer/templates/TrashExplorer/update_form.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TrashExplorer/tests.py" afterPath="$PROJECT_DIR$/TrashExplorer/tests.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TrashExplorer/urls.py" afterPath="$PROJECT_DIR$/TrashExplorer/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TrashExplorer/utils.py" afterPath="$PROJECT_DIR$/TrashExplorer/utils.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TrashExplorer/views.py" afterPath="$PROJECT_DIR$/TrashExplorer/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lab3/settings.py" afterPath="$PROJECT_DIR$/lab3/settings.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lab3/urls.py" afterPath="$PROJECT_DIR$/lab3/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lab3/wsgi.py" afterPath="$PROJECT_DIR$/lab3/wsgi.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log" afterPath="$PROJECT_DIR$/log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manage.py" afterPath="$PROJECT_DIR$/manage.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -97,11 +100,9 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TrashExplorer/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="667">
-              <caret line="147" column="30" lean-forward="false" selection-start-line="147" selection-start-column="30" selection-end-line="147" selection-end-column="30" />
-              <folding>
-                <element signature="e#24#78#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="864">
+              <caret line="115" column="6" lean-forward="false" selection-start-line="115" selection-start-column="6" selection-end-line="115" selection-end-column="6" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -109,11 +110,9 @@
       <file leaf-file-name="utils.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TrashExplorer/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="65" column="8" lean-forward="false" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="8" />
-              <folding>
-                <element signature="e#52#74#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="74">
+              <caret line="5" column="37" lean-forward="true" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -121,11 +120,9 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TrashExplorer/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="648">
-              <caret line="36" column="109" lean-forward="false" selection-start-line="36" selection-start-column="109" selection-end-line="36" selection-end-column="109" />
-              <folding>
-                <element signature="e#24#63#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-66">
+              <caret line="10" column="95" lean-forward="false" selection-start-line="10" selection-start-column="85" selection-end-line="10" selection-end-column="95" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -133,8 +130,8 @@
       <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TrashExplorer/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="3" column="39" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="3" selection-end-column="39" />
+            <state relative-caret-position="470">
+              <caret line="30" column="16" lean-forward="false" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -166,6 +163,7 @@
       <find>favicon</find>
       <find>print</find>
       <find>sleep</find>
+      <find>log</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -192,13 +190,13 @@
         <option value="$PROJECT_DIR$/TrashExplorer/templates/TrashExplorer/index.html" />
         <option value="$PROJECT_DIR$/TrashExplorer/urls.py" />
         <option value="$PROJECT_DIR$/TrashExplorer/templates/TrashExplorer/task_list.html" />
-        <option value="$PROJECT_DIR$/TrashExplorer/forms.py" />
         <option value="$PROJECT_DIR$/TrashExplorer/runtask.py" />
         <option value="$PROJECT_DIR$/TrashExplorer/templates/TrashExplorer/add_trash.html" />
         <option value="$PROJECT_DIR$/TrashExplorer/templates/TrashExplorer/trash_details.html" />
         <option value="$PROJECT_DIR$/TrashExplorer/templates/TrashExplorer/add_task.html" />
-        <option value="$PROJECT_DIR$/TrashExplorer/models.py" />
         <option value="$PROJECT_DIR$/TrashExplorer/templates/TrashExplorer/file_explorer.html" />
+        <option value="$PROJECT_DIR$/TrashExplorer/models.py" />
+        <option value="$PROJECT_DIR$/TrashExplorer/forms.py" />
         <option value="$PROJECT_DIR$/TrashExplorer/views.py" />
         <option value="$PROJECT_DIR$/TrashExplorer/utils.py" />
       </list>
@@ -253,6 +251,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -301,7 +300,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -495,10 +493,9 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="12" y="174" width="1282" height="995" extended-state="6" />
-    <editor active="true" />
+    <frame x="12" y="174" width="1301" height="744" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25703126" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2567256" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291714" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -589,9 +586,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="840">
           <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding>
-            <element signature="e#24#78#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -622,9 +617,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="820">
           <caret line="45" column="105" lean-forward="false" selection-start-line="45" selection-start-column="105" selection-end-line="45" selection-end-column="105" />
-          <folding>
-            <element signature="e#24#78#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -655,9 +648,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="620">
           <caret line="35" column="105" lean-forward="false" selection-start-line="35" selection-start-column="105" selection-end-line="35" selection-end-column="105" />
-          <folding>
-            <element signature="e#24#78#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -698,13 +689,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/log" />
     <entry file="file://$PROJECT_DIR$/TrashExplorer/templates/TrashExplorer/update_task.html" />
     <entry file="file://$PROJECT_DIR$/lab3/urls.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -781,7 +766,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -789,7 +773,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="13" column="14" lean-forward="false" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -797,9 +780,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="21" column="62" lean-forward="true" selection-start-line="21" selection-start-column="62" selection-end-line="21" selection-end-column="62" />
-          <folding>
-            <marker date="1505433367524" expanded="true" signature="696:762" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -807,25 +787,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="16" column="14" lean-forward="true" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TrashExplorer/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="3" column="39" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="3" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TrashExplorer/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="36" column="109" lean-forward="false" selection-start-line="36" selection-start-column="109" selection-end-line="36" selection-end-column="109" />
-          <folding>
-            <element signature="e#24#63#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -833,7 +794,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="16" column="15" lean-forward="true" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="76" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -841,30 +801,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#form#1;n#!!top" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TrashExplorer/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-66">
+          <caret line="10" column="95" lean-forward="false" selection-start-line="10" selection-start-column="85" selection-end-line="10" selection-end-column="95" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TrashExplorer/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="30" column="16" lean-forward="false" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TrashExplorer/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="667">
-          <caret line="147" column="30" lean-forward="false" selection-start-line="147" selection-start-column="30" selection-end-line="147" selection-end-column="30" />
-          <folding>
-            <element signature="e#24#78#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="864">
+          <caret line="115" column="6" lean-forward="false" selection-start-line="115" selection-start-column="6" selection-end-line="115" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TrashExplorer/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="65" column="8" lean-forward="false" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="8" />
-          <folding>
-            <element signature="e#52#74#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="74">
+          <caret line="5" column="37" lean-forward="true" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>
